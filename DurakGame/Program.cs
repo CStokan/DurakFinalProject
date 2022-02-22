@@ -39,6 +39,7 @@ namespace DurakGame
 
             printDeck.Shuffle();
             printDeck.Reset();
+            printDeck.Shuffle();
 
             // Print the whole durak deck
             foreach (Card c in printDeck.TakeCards(36))
