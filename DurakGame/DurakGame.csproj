@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cards.Domain\Cards.Domain.csproj" />
+    <ProjectReference Include="..\Cards.Domain\CardsLibrary.csproj" />
   </ItemGroup>
 
 </Project>

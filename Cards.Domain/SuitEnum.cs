@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cards.Domain
+namespace CardsLibrary
 {
-    public interface ICard
+    public enum SuitEnum
     {
+        Club,
+        Diamond,
+        Heart,
+        Spade
     }
 }
