@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DurakGame", "DurakGame\Dura
 		{6D1BF632-AC3B-45BD-AAFB-F97BEADA7ECB} = {6D1BF632-AC3B-45BD-AAFB-F97BEADA7ECB}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DurakForm", "DurakForm\DurakForm.csproj", "{1997EEFF-7D0A-4130-A7D5-AE9A230F2E16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{EFB56BBC-3642-49D6-9DE7-2A641B4898AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFB56BBC-3642-49D6-9DE7-2A641B4898AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFB56BBC-3642-49D6-9DE7-2A641B4898AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1997EEFF-7D0A-4130-A7D5-AE9A230F2E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1997EEFF-7D0A-4130-A7D5-AE9A230F2E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1997EEFF-7D0A-4130-A7D5-AE9A230F2E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1997EEFF-7D0A-4130-A7D5-AE9A230F2E16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
