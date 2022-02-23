@@ -63,9 +63,9 @@ namespace DurakForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AoKbB6q {
+        internal static System.Drawing.Bitmap AoKbB6q1 {
             get {
-                object obj = ResourceManager.GetObject("AoKbB6q", resourceCulture);
+                object obj = ResourceManager.GetObject("AoKbB6q1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
