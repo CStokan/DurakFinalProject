@@ -96,9 +96,10 @@ namespace DurakForm
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(1094, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(103, 65);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Whose Turn";
+            this.label2.Text = "Whose Turn:\r\n--------------------------------\r\nComputer\r\n------------------------" +
+    "--------\r\nPlayer\r\n";
             // 
             // richTextBox3
             // 
