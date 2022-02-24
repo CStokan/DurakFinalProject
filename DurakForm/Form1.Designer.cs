@@ -29,7 +29,6 @@ namespace DurakForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDurakGame));
             this.lblTrumpCard = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnStart = new System.Windows.Forms.Button();
@@ -97,9 +96,10 @@ namespace DurakForm
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(1094, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(103, 65);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Whose Turn";
+            this.label2.Text = "Whose Turn:\r\n--------------------------------\r\nComputer\r\n------------------------" +
+    "--------\r\nPlayer\r\n";
             // 
             // richTextBox3
             // 
@@ -193,7 +193,7 @@ namespace DurakForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
             this.Controls.Add(this.richTextBox7);
