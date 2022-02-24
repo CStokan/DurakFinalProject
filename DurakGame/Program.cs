@@ -13,7 +13,7 @@ namespace DurakGame
         {
             Console.WriteLine("Hello World!");
 
-            Deck myDeck = new Deck();
+            Deck myDeck = new Deck(52);
 
             Cards player1 = new Cards();
 

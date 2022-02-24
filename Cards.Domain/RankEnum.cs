@@ -8,8 +8,7 @@ namespace CardsLibrary
 {
     public enum RankEnum
     {
-        Ace = 1,
-        Two,
+        Two = 1,
         Three,
         Four,
         Five,
@@ -20,6 +19,7 @@ namespace CardsLibrary
         Ten,
         Jack,
         Queen,
-        King
+        King,
+        Ace 
     }
 }

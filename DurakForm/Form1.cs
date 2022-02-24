@@ -29,7 +29,7 @@ namespace DurakForm
 
         private void label7_Click(object sender, EventArgs e)
         {
-            S
+            
         }
 
         private void richTextBox7_TextChanged(object sender, EventArgs e)

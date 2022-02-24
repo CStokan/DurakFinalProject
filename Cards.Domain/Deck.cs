@@ -8,48 +8,47 @@ namespace CardsLibrary
 {
     public class Deck
     {
-        private Card[] cards;
+        private Cards toDeck = new Cards();
 
         public Deck()
         {
-            cards = new Card[52];
+            
             for (int suitVal = 0; suitVal < 4; suitVal++)
             {
                 for (int rankVal = 1; rankVal < 14; rankVal++)
                 {
-                    cards[suitVal * 13 + rankVal - 1] = new Card((SuitEnum)suitVal,
-                                                                (RankEnum)rankVal);
+                    toDeck.Add(new Card((SuitEnum)suitVal, (RankEnum)rankVal));
                 }
             }
         }
+
+        /// <summary>
+        /// Param constructor for getting the desired deck size
+        /// </summary>
+        /// <param name="deckSize"></param>
+        public Deck(int deckSize)
+        {
+            int startDeckAt = 5;
+            
+            
+            for (int suitVal = 0; suitVal < 4; suitVal++)
+            {
+                for (int rankVal = 1; rankVal < 14; rankVal++)
+                {
+                    toDeck.Add(new Card((SuitEnum)suitVal, (RankEnum)rankVal));
+                }
+            }
+        }
+
         public Card GetCard(int cardNum)
         {
             if (cardNum >= 0 && cardNum <= 51)
-                return cards[cardNum];
+                return toDeck[cardNum];
             else
                 throw
                     (new System.ArgumentOutOfRangeException("cardNum", cardNum,
                           "Value must be between 0 and 51."));
         }
-        public void Shuffle()
-        {
-            Card[] newDeck = new Card[52];
-            bool[] assigned = new bool[52];
-            Random sourceGen = new Random();
-            for (int i = 0; i < 52; i++)
-            {
-                int destCard = 0;
-                bool foundCard = false;
-                while (foundCard == false)
-                {
-                    destCard = sourceGen.Next(52);
-                    if (assigned[destCard] == false)
-                        foundCard = true;
-                }
-                assigned[destCard] = true;
-                newDeck[destCard] = cards[i];
-            }
-            newDeck.CopyTo(cards, 0);
-        }
+
     }
 }

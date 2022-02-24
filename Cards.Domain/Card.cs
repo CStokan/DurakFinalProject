@@ -25,6 +25,8 @@ namespace CardsLibrary
         // Default constructor
         private Card() { }
 
+     
+
         public override string ToString()
         {
             return "The " + rank + " of " + suit + "s";
