@@ -13,25 +13,16 @@ namespace DurakGame
         {
             Console.WriteLine("Hello World!");
 
-            Deck myDeck = new Deck(52);
+            // Create a deck of 36 cards using the param constructor
+            Deck myDeck = new Deck(36);
 
-            Cards player1 = new Cards();
+            // Write deck count
+            Console.WriteLine(myDeck.DeckCount());
 
-
-            for (int i = 0; i < 52; i++)
-            {
-                Card tempCard = myDeck.GetCard(i);
-                Console.Write(tempCard.ToString());
-                if (i != 51)
-                    Console.WriteLine();
-                else
-                    Console.WriteLine();
-            }
-
+            // Write deck to string
+            myDeck.DeckToString(myDeck);
 
             Console.ReadKey();
-
-
 
         }
     }
