@@ -66,6 +66,11 @@ namespace CardsLibrary
         }
 
         public override bool Equals(object card) => this == (Card)card;
+
+        /// <summary>
+        /// Gets the hashcode of the card by adding the rank and suit then * by 13
+        /// </summary>y
+        /// <returns>Returns the hash code</returns>
         public override int GetHashCode()
                       => 13 * (int)suit + (int)rank;
 
