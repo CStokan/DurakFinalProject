@@ -45,6 +45,8 @@ namespace DurakForm
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.richTextBox7 = new System.Windows.Forms.RichTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -94,7 +96,7 @@ namespace DurakForm
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1094, 137);
+            this.label2.Location = new System.Drawing.Point(1078, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 65);
             this.label2.TabIndex = 5;
@@ -189,6 +191,24 @@ namespace DurakForm
             this.richTextBox7.Text = "Computer:\n------------\nPlayer:";
             this.richTextBox7.TextChanged += new System.EventHandler(this.richTextBox7_TextChanged);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(893, 427);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Attack";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(893, 458);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(42, 13);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Defend";
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +216,8 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.richTextBox7);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -237,6 +259,8 @@ namespace DurakForm
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox richTextBox7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }
 
