@@ -62,13 +62,13 @@ namespace CardsLibrary
 
 
         //gets a card based on int number
-        public Card GetCard(int cardNum, Cards cards)
+        public Card GetCard(int cardToGet, Cards cards)
         {
 
-            if (cardNum >= 0 && cardNum <= 51)
-                return cards[cardNum];
+            if (cardToGet >= 0 && cardToGet <= 51)
+                return cards[cardToGet];
             else
-                throw (new System.ArgumentOutOfRangeException("cardNum", cardNum,
+                throw (new System.ArgumentOutOfRangeException("Card: ", cardToGet,
                        "Value must be between 0 and 51."));
         }
 
