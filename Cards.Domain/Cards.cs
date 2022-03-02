@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace CardsLibrary
 {
-    public class Cards : CollectionBase, ICloneable
+    public class Cards : List<Card>, ICloneable
     {
-
 
         /// <summary>
         /// Creates a clone for the list of cards
@@ -26,22 +25,27 @@ namespace CardsLibrary
             return newCards;
         }
 
-        public void Add(Card newCard) => List.Add(newCard);
-
-        public void Remove(Card oldCard) => List.Remove(oldCard);
-
 
         /// <summary>
-        /// Returns a card at this index
+        /// Cards to String override
         /// </summary>
-        /// <param name="cardIndex">Index of card</param>
-        /// <returns>card at the index</returns>
-        public Card this[int cardIndex]
+        /// <returns>Cards but to string</returns>
+        public override string ToString()
         {
-            get { return (Card)List[cardIndex]; }
-            set { List[cardIndex] = value; }
-        }
+            String cardsToString = "";
 
+            cardsToString += "\n\nCards\n";
+            for (int i = 0; i < this.Count(); i++)
+            {
+                Card card = this.GetCard(i, this);
+                cardsToString += card.ToString() + "\n";
+                if (i != 51)
+                    cardsToString += "\n";
+
+            }
+
+            return cardsToString;
+        }
 
         /// <summary>
         /// Utility method for copying card instances into another Cards
@@ -56,12 +60,18 @@ namespace CardsLibrary
             }
         }
 
-        /// <summary>
-        /// Check to see if the Cards collection contains a particular card.
-        /// This calls the Contains() method of the ArrayList for the collection,
-        /// which you access through the InnerList property.
-        /// </summary>
-        public bool Contains(Card card) => InnerList.Contains(card);
+
+        //gets a card based on int number
+        public Card GetCard(int cardNum, Cards cards)
+        {
+
+            if (cardNum >= 0 && cardNum <= 51)
+                return cards[cardNum];
+            else
+                throw (new System.ArgumentOutOfRangeException("cardNum", cardNum,
+                       "Value must be between 0 and 51."));
+        }
+
 
 
     }

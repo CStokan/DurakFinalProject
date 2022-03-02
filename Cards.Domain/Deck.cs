@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace CardsLibrary
 {
-    public class Deck
+    public class Deck 
     {
-        //private Card[] cards;
+        /// <summary>
+        /// Private variables
+        /// </summary>
         private Cards cards = new Cards();
+
 
 
         /// <summary>
@@ -38,6 +41,12 @@ namespace CardsLibrary
             Card.trump = trump;
         }
 
+        //Parameterized Constructor (CardList), sets private attribute cardlist to new carlist.
+        private Deck(Cards newCards)
+        {
+            cards = newCards;
+        }
+
         /// <summary>
         /// Default constructor for deck
         /// </summary>
@@ -54,21 +63,31 @@ namespace CardsLibrary
             }
         }
 
-        //to string method shows cards in deck as a string
-        public void DeckToString(Deck newDeck)
+        /// <summary>
+        /// Overridden to string method that prints a deck in a string format
+        /// </summary>
+        /// <returns>A formatted deck string</returns>
+        public override string ToString()
         {
-            // Loop thru deck and get the card and toStirng and output to console
-            for (int i = 0; i < newDeck.DeckCount(); i++)
+            string deckToString = "";
+
+            for (int i = 0; i < this.DeckCount(); i++)
             {
-                Card tempCard = newDeck.GetCard(i);
-                Console.WriteLine(tempCard.ToString());
+                Card card = this.GetCard(i);
+                deckToString += card.ToString() + "\n";
             }
+            return deckToString;
         }
 
+        /// <summary>
+        /// Allows the deck to use the cards.Count method
+        /// </summary>
+        /// <returns>The count of cards in a deck</returns>
         public int DeckCount()
         {
             return cards.Count;
         }
+
 
 
         /// <summary>
@@ -100,9 +119,41 @@ namespace CardsLibrary
                     }
                 }
             }
-
- 
         }
+
+        /// <summary>
+        /// This is a function that draws a certain amount of cards
+        /// </summary>
+        /// <param name="numberOfCards">How many cards do you want to draw</param>
+        /// <returns>Drawn Cards</returns>
+        public Cards DrawCards(int numberOfCards)
+        {
+            Cards cardsToDraw = new Cards();
+
+            for (int i = 0; i < numberOfCards; i++)
+            {
+                cardsToDraw.Add(cards.ElementAt(0));
+                cards.RemoveAt(0);
+            }
+
+            return cardsToDraw;
+
+        }
+
+        /// <summary>
+        /// Draws a card from a deck
+        /// </summary>
+        /// <returns>The card at the top of the deck</returns>
+        public Card DrawCard()
+        {
+
+            Card card;
+            // Draw first card then remove it
+            card = cards.First();
+            cards.RemoveAt(0);
+            return card;
+        }
+
 
         /// <summary>
         /// Gets a specified amount of cards

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CardsLibrary
 {
-    public class Card : ICloneable
+    public class Card 
     {
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace CardsLibrary
         }
 
         // Default constructor
-        private Card() { }
+        public Card() { }
 
         /// <summary>
         /// Override == method to check if the 2 cards are same suit / same rank
@@ -65,9 +65,23 @@ namespace CardsLibrary
             return !(card1 == card2);
         }
 
+        /// <summary>
+        /// If card is equal to card
+        /// </summary>
+        /// <param name="card">Card in question</param>
+        /// <returns>true or false</returns>
         public override bool Equals(object card) => this == (Card)card;
+
+
+        /// <summary>
+        /// Gets the hashcode of a card
+        /// </summary>
+        /// <returns>a hashed number that represents a specific card</returns>
         public override int GetHashCode()
-                      => 13 * (int)suit + (int)rank;
+        {
+            return 13 * (int)suit + (int)rank;
+        }
+                
 
 
         public static bool operator >(Card card1, Card card2)
