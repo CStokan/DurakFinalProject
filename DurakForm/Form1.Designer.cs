@@ -37,7 +37,6 @@ namespace DurakForm
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,6 +46,9 @@ namespace DurakForm
             this.richTextBox7 = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.pbxCard = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -75,6 +77,7 @@ namespace DurakForm
             this.btnStart.TabIndex = 2;
             this.btnStart.Text = "Start the game";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // richTextBox2
             // 
@@ -118,14 +121,7 @@ namespace DurakForm
             this.richTextBox4.Size = new System.Drawing.Size(524, 114);
             this.richTextBox4.TabIndex = 7;
             this.richTextBox4.Text = "";
-            // 
-            // richTextBox5
-            // 
-            this.richTextBox5.Location = new System.Drawing.Point(323, 471);
-            this.richTextBox5.Name = "richTextBox5";
-            this.richTextBox5.Size = new System.Drawing.Size(524, 117);
-            this.richTextBox5.TabIndex = 8;
-            this.richTextBox5.Text = "";
+            this.richTextBox4.TextChanged += new System.EventHandler(this.richTextBox4_TextChanged);
             // 
             // label3
             // 
@@ -209,6 +205,21 @@ namespace DurakForm
             this.label11.TabIndex = 19;
             this.label11.Text = "Defend";
             // 
+            // pbxCard
+            // 
+            this.pbxCard.Location = new System.Drawing.Point(160, 227);
+            this.pbxCard.Name = "pbxCard";
+            this.pbxCard.Size = new System.Drawing.Size(100, 115);
+            this.pbxCard.TabIndex = 20;
+            this.pbxCard.TabStop = false;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(323, 458);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(530, 169);
+            this.flowLayoutPanel1.TabIndex = 21;
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +227,8 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.pbxCard);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.richTextBox7);
@@ -225,7 +238,6 @@ namespace DurakForm
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.richTextBox5);
             this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.label2);
@@ -236,6 +248,7 @@ namespace DurakForm
             this.Controls.Add(this.lblTrumpCard);
             this.Name = "frmDurakGame";
             this.Text = "Durak Game";
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,7 +264,6 @@ namespace DurakForm
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.RichTextBox richTextBox5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -261,6 +273,8 @@ namespace DurakForm
         private System.Windows.Forms.RichTextBox richTextBox7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pbxCard;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

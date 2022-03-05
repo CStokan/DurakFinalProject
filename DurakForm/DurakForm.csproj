@@ -83,5 +83,52 @@
   <ItemGroup>
     <None Include="Resources\AoKbB6q1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\c1 - Copy.png" />
+    <Content Include="Resources\c1.png" />
+    <Content Include="Resources\c2 - Copy.png" />
+    <Content Include="Resources\c2.png" />
+    <Content Include="Resources\c6.png" />
+    <Content Include="Resources\c8.png" />
+    <Content Include="Resources\d10.png" />
+    <Content Include="Resources\d2.png" />
+    <Content Include="Resources\d8.png" />
+    <Content Include="Resources\d9.png" />
+    <Content Include="Resources\dj.png" />
+    <Content Include="Resources\dk.png" />
+    <Content Include="Resources\dq.png" />
+    <Content Include="Resources\h1.png" />
+    <Content Include="Resources\h10.png" />
+    <Content Include="Resources\h2.png" />
+    <Content Include="Resources\h3.png" />
+    <Content Include="Resources\h4.png" />
+    <Content Include="Resources\h5.png" />
+    <Content Include="Resources\h6.png" />
+    <Content Include="Resources\h7.png" />
+    <Content Include="Resources\h8.png" />
+    <Content Include="Resources\h9.png" />
+    <Content Include="Resources\hj.png" />
+    <Content Include="Resources\hk.png" />
+    <Content Include="Resources\hq.png" />
+    <Content Include="Resources\s1.png" />
+    <Content Include="Resources\s10.png" />
+    <Content Include="Resources\s2.png" />
+    <Content Include="Resources\s3.png" />
+    <Content Include="Resources\s4.png" />
+    <Content Include="Resources\s5.png" />
+    <Content Include="Resources\s6.png" />
+    <Content Include="Resources\s7.png" />
+    <Content Include="Resources\s8.png" />
+    <Content Include="Resources\s9.png" />
+    <Content Include="Resources\sj.png" />
+    <Content Include="Resources\sk.png" />
+    <Content Include="Resources\sq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cards.Domain\CardsLibrary.csproj">
+      <Project>{6d1bf632-ac3b-45bd-aafb-f97beada7ecb}</Project>
+      <Name>CardsLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

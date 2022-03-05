@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CardsLibrary;
+
+
 
 namespace DurakForm
 {
@@ -17,6 +20,13 @@ namespace DurakForm
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmDurakGame());
+
+
+
+
+
         }
+
+
     }
 }
