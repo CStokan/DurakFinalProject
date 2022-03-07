@@ -118,8 +118,97 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  
+  <data name="PlayersSide1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayersSide1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="woodback" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\woodback.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WhoseTurn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhoseTurn1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CardDecks1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CardDecks1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableWoodTexRiver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableWoodTexRiver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CardDecks" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CardDecks.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrumpCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrumpCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayersSide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayersSide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WhoseTurn3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhoseTurn3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableWoodTexPlayerSide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableWoodTexPlayerSide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayersSide3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayersSide3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableWoodTex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableWoodTex.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WhoseTurn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhoseTurn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Defend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Defend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RiverCards" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RiverCards.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RiverCards1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RiverCards1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComputerSide1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ComputerSide1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StartGameSmaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StartGameSmaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableWoodTexPlayerSide1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableWoodTexPlayerSide1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WhoseTurn2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WhoseTurn2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayersSide2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayersSide2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ScoreCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ScoreCard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Discarded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Discarded.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AoKbB6q1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AoKbB6q1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TrumpCard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TrumpCard1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StartGameButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StartGameButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TableWoodTex1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TableWoodTex1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ComputerSide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ComputerSide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Score" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Score.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PlayingCardBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PlayingCardBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
