@@ -13,8 +13,13 @@ namespace DurakGame
         {
 
             Deck myDeck = new Deck(36);
-            Player player1 = new Player();
-            Player player2 = new Player();
+            Hand player1Hand = new Hand();
+            Hand player2Hand = new Hand();
+
+
+            Player player1 = new Player(player1Hand);
+            Player player2 = new Player(player2Hand);
+
 
             Console.WriteLine("Cards in Deck: " + myDeck.DeckCount());
             Console.WriteLine(myDeck.ToString());
@@ -25,9 +30,10 @@ namespace DurakGame
             // Mock deal 6 cards to 2 players
             for (int i = 0; i < 6; i++)
             {
-                player1.AddCardToPlayer(myDeck.DrawCard());
-                player2.AddCardToPlayer(myDeck.DrawCard());
-            }            
+                player1.AddCardToHand(myDeck.DrawCard());
+                player2.AddCardToHand(myDeck.DrawCard());
+            }
+
 
             Console.WriteLine("Player 1");
             Console.WriteLine(player1.ToString());

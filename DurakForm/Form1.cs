@@ -51,14 +51,14 @@ namespace DurakForm
             Player player1 = new Player();
             Player player2 = new Player();
 
-            // Mock deal 6 cards to 2 players
-            for (int i = 0; i < 6; i++)
-            {
-                player1.AddCardToPlayer(myDeck.DrawCard());
-                pbxCard.ImageLocation = "./Resources/c4.png";
-                pbxCard.SizeMode = PictureBoxSizeMode.AutoSize;
-                player2.AddCardToPlayer(myDeck.DrawCard());
-            }
+            //// Mock deal 6 cards to 2 players
+            //for (int i = 0; i < 6; i++)
+            //{
+            //    player1.AddCardToPlayer(myDeck.DrawCard());
+            //    pbxCard.ImageLocation = "./Resources/c4.png";
+            //    pbxCard.SizeMode = PictureBoxSizeMode.AutoSize;
+            //    player2.AddCardToPlayer(myDeck.DrawCard());
+            //}
 
             int test = 4;
 
