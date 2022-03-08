@@ -84,9 +84,7 @@
     <None Include="Resources\AoKbB6q1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\c1 - Copy.png" />
     <Content Include="Resources\c1.png" />
-    <Content Include="Resources\c2 - Copy.png" />
     <Content Include="Resources\c2.png" />
     <Content Include="Resources\c6.png" />
     <Content Include="Resources\c8.png" />

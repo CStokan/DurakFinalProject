@@ -55,6 +55,8 @@ namespace DurakForm
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -73,7 +75,7 @@ namespace DurakForm
             this.btnStart.Image = global::DurakForm.Properties.Resources.StartGameSmaller;
             this.btnStart.Location = new System.Drawing.Point(1009, 227);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(191, 30);
+            this.btnStart.Size = new System.Drawing.Size(191, 37);
             this.btnStart.TabIndex = 2;
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -304,6 +306,16 @@ namespace DurakForm
             this.label20.Size = new System.Drawing.Size(102, 145);
             this.label20.TabIndex = 31;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DurakForm.Properties.Resources.c1;
+            this.pictureBox1.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
+            this.pictureBox1.Location = new System.Drawing.Point(342, 486);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(71, 96);
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,6 +323,7 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
@@ -339,6 +352,7 @@ namespace DurakForm
             this.Controls.Add(this.lblTrumpCard);
             this.Name = "frmDurakGame";
             this.Text = "Durak Game";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,6 +386,7 @@ namespace DurakForm
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

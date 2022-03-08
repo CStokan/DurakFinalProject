@@ -47,6 +47,8 @@ namespace CardsLibrary
             cards = newCards;
         }
 
+
+
         /// <summary>
         /// Default constructor for deck
         /// </summary>
@@ -57,7 +59,6 @@ namespace CardsLibrary
             {
                 for (int rankVal = 1; rankVal < 14; rankVal++)
                 {
-                    //cards[suitVal * 13 + rankVal - 1] = new Card((Suit)suitVal, (Rank)rankVal);
                     cards.Add(new Card((SuitEnum)suitVal, (RankEnum)rankVal));
                 }
             }
@@ -87,8 +88,6 @@ namespace CardsLibrary
         {
             return cards.Count;
         }
-
-
 
         /// <summary>
         /// Param constructor for getting the desired deck size
@@ -135,9 +134,7 @@ namespace CardsLibrary
                 cardsToDraw.Add(cards.ElementAt(0));
                 cards.RemoveAt(0);
             }
-
             return cardsToDraw;
-
         }
 
         /// <summary>

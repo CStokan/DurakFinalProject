@@ -12,10 +12,18 @@ namespace DurakGame
         static void Main(string[] args)
         {
 
-            Deck myDeck = new Deck(36);
+            //Deck myDeck = new Deck(36);
+            //Hand player1Hand = new Hand();
+            //Hand player2Hand = new Hand();
+            //
+            //
+            //Player player1 = new Player(player1Hand);
+            //Player player2 = new Player(player2Hand);
+            Deck myDeck = new Deck(52);
+            Cards myCard = new Cards();
+
             Hand player1Hand = new Hand();
             Hand player2Hand = new Hand();
-
 
             Player player1 = new Player(player1Hand);
             Player player2 = new Player(player2Hand);
@@ -25,21 +33,33 @@ namespace DurakGame
             Console.WriteLine(myDeck.ToString());
             Console.WriteLine("Deal 6 cards to each player\n");
 
-            Console.WriteLine(myDeck.DrawCards(6).ToString());
-
-            // Mock deal 6 cards to 2 players
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i <= 51; i++)
             {
-                player1.AddCardToHand(myDeck.DrawCard());
-                player2.AddCardToHand(myDeck.DrawCard());
-            }
+                int card = 0;
+                Console.WriteLine(myDeck.GetCard(card).ToString());
+                Console.WriteLine(myDeck.DrawCard().GetHashCode());
+                card++;
+            } 
 
-
-            Console.WriteLine("Player 1");
-            Console.WriteLine(player1.ToString());
-
-            Console.WriteLine("Player 2");
-            Console.WriteLine(player2.ToString());
+            //Console.WriteLine("Cards in Deck: " + myDeck.DeckCount());
+            //Console.WriteLine(myDeck.ToString());
+            //Console.WriteLine("Deal 6 cards to each player\n");
+            //
+            //Console.WriteLine(myDeck.DrawCards(6).ToString());
+            //
+            //// Mock deal 6 cards to 2 players
+            //for (int i = 0; i < 6; i++)
+            //{
+            //    player1.AddCardToHand(myDeck.DrawCard());
+            //    player2.AddCardToHand(myDeck.DrawCard());
+            //}
+            //
+            //
+            //Console.WriteLine("Player 1");
+            //Console.WriteLine(player1.ToString());
+            //
+            //Console.WriteLine("Player 2");
+            //Console.WriteLine(player2.ToString());
 
             Console.WriteLine("\nCards in Deck: " + myDeck.DeckCount());
 

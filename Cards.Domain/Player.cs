@@ -12,6 +12,10 @@ namespace CardsLibrary
 
         private Hand hand = new Hand();
 
+        /// <summary>
+        /// default player construct 
+        /// </summary>
+        /// <param name="playerHand"></param>
         public Player(Hand playerHand)
         {
             hand = playerHand;
