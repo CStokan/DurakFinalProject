@@ -1,37 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CardsLibrary.Card" BaseTypeListCollapsed="true">
-    <Position X="5" Y="0.5" Width="1.5" />
+    <Position X="8" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAQAAAAAEgACAAgAAAAAAAIgAAAAAAAIEBzA=</HashCode>
       <FileName>Card.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="CardsLibrary.Cards" BaseTypeListCollapsed="true">
-    <Position X="6.75" Y="1" Width="1.5" />
+    <Position X="9.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAACAAABAAAAAAAAAAAAAAAAAAQIBA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAAAAIBA=</HashCode>
       <FileName>Cards.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="CardsLibrary.Deck">
-    <Position X="1.25" Y="1.5" Width="1.5" />
+    <Position X="4.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAgAAAEAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAgAAAEAUAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Deck.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="CardsLibrary.Hand">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAgIAAgBSAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Hand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CardsLibrary.Player">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="CardsLibrary.RankEnum">
-    <Position X="3" Y="2.25" Width="1.5" />
+    <Position X="6" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAAAAAAAAAAggAAAEAAEAIAAAAAFBAAAAAgAAAgAAEE=</HashCode>
       <FileName>RankEnum.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="CardsLibrary.SuitEnum">
-    <Position X="3" Y="0.5" Width="1.5" />
+    <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAACAACA=</HashCode>
       <FileName>SuitEnum.cs</FileName>
