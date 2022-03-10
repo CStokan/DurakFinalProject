@@ -85,10 +85,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\c1.png" />
+    <None Include="Resources\c11.png" />
+    <None Include="Resources\c12.png" />
+    <None Include="Resources\c13.png" />
+    <None Include="Resources\c14.png" />
     <Content Include="Resources\c2.png" />
     <Content Include="Resources\c6.png" />
     <Content Include="Resources\c8.png" />
     <Content Include="Resources\d10.png" />
+    <None Include="Resources\d11.png" />
+    <None Include="Resources\d12.png" />
+    <None Include="Resources\d13.png" />
+    <None Include="Resources\d14.png" />
     <Content Include="Resources\d2.png" />
     <Content Include="Resources\d8.png" />
     <Content Include="Resources\d9.png" />
@@ -97,6 +105,10 @@
     <Content Include="Resources\dq.png" />
     <Content Include="Resources\h1.png" />
     <Content Include="Resources\h10.png" />
+    <None Include="Resources\h11.png" />
+    <None Include="Resources\h12.png" />
+    <None Include="Resources\h13.png" />
+    <None Include="Resources\h14.png" />
     <Content Include="Resources\h2.png" />
     <Content Include="Resources\h3.png" />
     <Content Include="Resources\h4.png" />
@@ -110,6 +122,10 @@
     <Content Include="Resources\hq.png" />
     <Content Include="Resources\s1.png" />
     <Content Include="Resources\s10.png" />
+    <None Include="Resources\s11.png" />
+    <None Include="Resources\s12.png" />
+    <None Include="Resources\s13.png" />
+    <None Include="Resources\s14.png" />
     <Content Include="Resources\s2.png" />
     <Content Include="Resources\s3.png" />
     <Content Include="Resources\s4.png" />
