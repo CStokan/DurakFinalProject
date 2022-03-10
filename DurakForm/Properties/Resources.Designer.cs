@@ -103,6 +103,46 @@ namespace DurakForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap c11 {
+            get {
+                object obj = ResourceManager.GetObject("c11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap c12 {
+            get {
+                object obj = ResourceManager.GetObject("c12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap c13 {
+            get {
+                object obj = ResourceManager.GetObject("c13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap c14 {
+            get {
+                object obj = ResourceManager.GetObject("c14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap c6 {
             get {
                 object obj = ResourceManager.GetObject("c6", resourceCulture);
@@ -166,6 +206,46 @@ namespace DurakForm.Properties {
         internal static System.Drawing.Bitmap d10 {
             get {
                 object obj = ResourceManager.GetObject("d10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap d11 {
+            get {
+                object obj = ResourceManager.GetObject("d11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap d12 {
+            get {
+                object obj = ResourceManager.GetObject("d12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap d13 {
+            get {
+                object obj = ResourceManager.GetObject("d13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap d14 {
+            get {
+                object obj = ResourceManager.GetObject("d14", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +346,46 @@ namespace DurakForm.Properties {
         internal static System.Drawing.Bitmap h10 {
             get {
                 object obj = ResourceManager.GetObject("h10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap h11 {
+            get {
+                object obj = ResourceManager.GetObject("h11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap h12 {
+            get {
+                object obj = ResourceManager.GetObject("h12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap h13 {
+            get {
+                object obj = ResourceManager.GetObject("h13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap h14 {
+            get {
+                object obj = ResourceManager.GetObject("h14", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +586,46 @@ namespace DurakForm.Properties {
         internal static System.Drawing.Bitmap s10 {
             get {
                 object obj = ResourceManager.GetObject("s10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s11 {
+            get {
+                object obj = ResourceManager.GetObject("s11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s12 {
+            get {
+                object obj = ResourceManager.GetObject("s12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s13 {
+            get {
+                object obj = ResourceManager.GetObject("s13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s14 {
+            get {
+                object obj = ResourceManager.GetObject("s14", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

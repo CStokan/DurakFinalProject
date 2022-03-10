@@ -61,6 +61,85 @@ namespace DurakForm
             Player player1 = new Player();
             Player player2 = new Player();
 
+            Random Randomsuit = new Random();
+            Type Suittype = typeof(SuitEnum);
+            Array Suitvalues = Suittype.GetEnumValues();
+            int Suitindex = Randomsuit.Next(Suitvalues.Length);
+            SuitEnum Suit = (SuitEnum)Suitvalues.GetValue(Suitindex);
+
+            Random RandomRank = new Random();
+            Type Ranktype = typeof(RankEnum);
+            Array Rankvalues = Ranktype.GetEnumValues();
+            int Rankindex = RandomRank.Next(Rankvalues.Length);
+            RankEnum Rank = (RankEnum)Rankvalues.GetValue(Rankindex);
+
+
+
+            for (int i = 1; i <= 12; i++)
+            {
+               Image img = Image.FromFile("C:\\Users\\Alex-PC\\Desktop\\Semester 4\\Durak\\DurakForm\\Resources\\" + (Char)Suit + (int)Rank + ".png");
+
+                Suittype = typeof(SuitEnum);
+                Suitvalues = Suittype.GetEnumValues();
+                Suitindex = Randomsuit.Next(Suitvalues.Length);
+                Suit = (SuitEnum)Suitvalues.GetValue(Suitindex);
+
+                Ranktype = typeof(RankEnum);
+                Rankvalues = Ranktype.GetEnumValues();
+                Rankindex = RandomRank.Next(Rankvalues.Length);
+                Rank = (RankEnum)Rankvalues.GetValue(Rankindex);
+
+                if (i == 1)
+                {
+                    pictureBox1.Image = img;
+                }
+                if (i == 2)
+                {
+                    pictureBox2.Image = img;
+                }
+                if (i == 3)
+                {
+                    pictureBox3.Image = img;
+                }
+                if (i == 4)
+                {
+                    pictureBox4.Image = img;
+                }
+                if (i == 5)
+                {
+                    pictureBox5.Image = img;
+                }
+                if (i == 6)
+                {
+                    pictureBox6.Image = img;
+                }
+                if (i == 7)
+                {
+                    pictureBox7.Image = img;
+                }
+                if (i == 8)
+                {
+                    pictureBox8.Image = img;
+                }
+                if (i == 9)
+                {
+                    pictureBox9.Image = img;
+                }
+                if (i == 10)
+                {
+                    pictureBox10.Image = img;
+                }
+                if (i == 11)
+                {
+                    pictureBox11.Image = img;
+                }
+                if (i == 12)
+                {
+                    pictureBox12.Image = img;
+                }
+
+            }
+
             //// Mock deal 6 cards to 2 players
             //for (int i = 0; i < 6; i++)
             //{
