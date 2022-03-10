@@ -44,9 +44,9 @@ namespace DurakForm
             this.richTextBox7 = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.playerSide = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.computerSide = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -205,15 +205,16 @@ namespace DurakForm
             this.label11.Size = new System.Drawing.Size(76, 30);
             this.label11.TabIndex = 19;
             // 
-            // label13
+            // playerSide
             // 
-            this.label13.BackColor = System.Drawing.SystemColors.Window;
-            this.label13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label13.Image = global::DurakForm.Properties.Resources.TableWoodTexPlayerSide1;
-            this.label13.Location = new System.Drawing.Point(324, 461);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(524, 149);
-            this.label13.TabIndex = 0;
+            this.playerSide.BackColor = System.Drawing.SystemColors.Window;
+            this.playerSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.playerSide.Image = global::DurakForm.Properties.Resources.TableWoodTexPlayerSide1;
+            this.playerSide.Location = new System.Drawing.Point(324, 461);
+            this.playerSide.Name = "playerSide";
+            this.playerSide.Size = new System.Drawing.Size(524, 149);
+            this.playerSide.TabIndex = 0;
+            this.playerSide.Click += new System.EventHandler(this.label13_Click);
             // 
             // label8
             // 
@@ -225,14 +226,14 @@ namespace DurakForm
             this.label8.Size = new System.Drawing.Size(105, 23);
             this.label8.TabIndex = 22;
             // 
-            // label9
+            // computerSide
             // 
-            this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label9.Image = global::DurakForm.Properties.Resources.TableWoodTex1;
-            this.label9.Location = new System.Drawing.Point(323, 54);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(524, 114);
-            this.label9.TabIndex = 23;
+            this.computerSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.computerSide.Image = global::DurakForm.Properties.Resources.TableWoodTex1;
+            this.computerSide.Location = new System.Drawing.Point(323, 54);
+            this.computerSide.Name = "computerSide";
+            this.computerSide.Size = new System.Drawing.Size(524, 114);
+            this.computerSide.TabIndex = 23;
             // 
             // label12
             // 
@@ -310,11 +311,12 @@ namespace DurakForm
             // 
             this.pictureBox1.Image = global::DurakForm.Properties.Resources.c1;
             this.pictureBox1.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox1.Location = new System.Drawing.Point(342, 486);
+            this.pictureBox1.Location = new System.Drawing.Point(742, 488);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 96);
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmDurakGame
             // 
@@ -331,9 +333,9 @@ namespace DurakForm
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.playerSide);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.computerSide);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -376,9 +378,9 @@ namespace DurakForm
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label computerSide;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label playerSide;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;

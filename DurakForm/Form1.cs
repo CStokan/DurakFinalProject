@@ -13,10 +13,15 @@ namespace DurakForm
 {
     public partial class frmDurakGame : Form
     {
+        private Random _random;
         public frmDurakGame()
         {
             InitializeComponent();
+
+            _random = new Random();
         }
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -43,6 +48,11 @@ namespace DurakForm
 
         }
 
+
+
+
+
+
         private void btnStart_Click(object sender, EventArgs e)
         {
 
@@ -60,6 +70,11 @@ namespace DurakForm
             //    player2.AddCardToPlayer(myDeck.DrawCard());
             //}
 
+            
+
+            
+
+
             int test = 4;
 
 
@@ -68,6 +83,16 @@ namespace DurakForm
 
               
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
