@@ -73,11 +73,22 @@ namespace DurakForm
             int Rankindex = RandomRank.Next(Rankvalues.Length);
             RankEnum Rank = (RankEnum)Rankvalues.GetValue(Rankindex);
 
-
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = true;
+            pictureBox3.Visible = true;
+            pictureBox4.Visible = true;
+            pictureBox5.Visible = true;
+            pictureBox6.Visible = true;
+            pictureBox7.Visible = true;
+            pictureBox8.Visible = true;
+            pictureBox9.Visible = true;
+            pictureBox10.Visible = true;
+            pictureBox11.Visible = true;
+            pictureBox12.Visible = true;
 
             for (int i = 1; i <= 12; i++)
             {
-               Image img = Image.FromFile("C:\\Users\\Alex-PC\\Desktop\\Semester 4\\Durak\\DurakForm\\Resources\\" + (Char)Suit + (int)Rank + ".png");
+               Image img = Image.FromFile("D:\\SCHOOL\\FIANL\\DurakForm\\Resources\\" + (Char)Suit + (int)Rank + ".png");
 
                 Suittype = typeof(SuitEnum);
                 Suitvalues = Suittype.GetEnumValues();
