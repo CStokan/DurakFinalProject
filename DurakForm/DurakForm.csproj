@@ -139,6 +139,10 @@
     <Content Include="Resources\sq.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CardBox\CardBox.csproj">
+      <Project>{72E57B29-A7D7-4050-97FB-F09321BD20CE}</Project>
+      <Name>CardBox</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cards.Domain\CardsLibrary.csproj">
       <Project>{6d1bf632-ac3b-45bd-aafb-f97beada7ecb}</Project>
       <Name>CardsLibrary</Name>

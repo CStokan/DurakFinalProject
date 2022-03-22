@@ -7,8 +7,8 @@
     <ProjectGuid>{6D1BF632-AC3B-45BD-AAFB-F97BEADA7ECB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cards.Domain</RootNamespace>
-    <AssemblyName>Cards.Domain</AssemblyName>
+    <RootNamespace>CardsLibrary</RootNamespace>
+    <AssemblyName>CardsLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,11 +46,86 @@
     <Compile Include="Hand.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="RankEnum.cs" />
     <Compile Include="SuitEnum.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayingCardBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clubs_Six.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clubs_Ten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clubs_Three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diamonds_Five.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diamonds_Four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diamonds_One.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diamonds_Seven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diamonds_Six.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Diamonds_Three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hearts_One.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hearts_Ten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spades_One.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spades_Ten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clubs_Five.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clubs_Four.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clubs_Nine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clubs_Seven.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -29,6 +29,7 @@ namespace DurakForm
         /// </summary>
         private void InitializeComponent()
         {
+            CardsLibrary.Card card2 = new CardsLibrary.Card();
             this.lblTrumpCard = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -55,30 +56,7 @@ namespace DurakForm
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cbxTestCard = new CardBox.CardBox();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -236,7 +214,6 @@ namespace DurakForm
             this.playerSide.Name = "playerSide";
             this.playerSide.Size = new System.Drawing.Size(524, 149);
             this.playerSide.TabIndex = 0;
-            this.playerSide.Click += new System.EventHandler(this.label13_Click);
             // 
             // label8
             // 
@@ -329,138 +306,22 @@ namespace DurakForm
             this.label20.Size = new System.Drawing.Size(102, 145);
             this.label20.TabIndex = 31;
             // 
-            // pictureBox2
+            // cbxTestCard
             // 
-            this.pictureBox2.Image = global::DurakForm.Properties.Resources.s14;
-            this.pictureBox2.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox2.Location = new System.Drawing.Point(352, 488);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox2.TabIndex = 32;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox3.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox3.Location = new System.Drawing.Point(429, 488);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox3.TabIndex = 32;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Visible = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox4.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox4.Location = new System.Drawing.Point(506, 488);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox4.TabIndex = 32;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox5.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox5.Location = new System.Drawing.Point(583, 488);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox5.TabIndex = 32;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Visible = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox6.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox6.Location = new System.Drawing.Point(660, 488);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox6.TabIndex = 32;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Visible = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox7.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox7.Location = new System.Drawing.Point(352, 61);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox7.TabIndex = 32;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Visible = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox8.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox8.Location = new System.Drawing.Point(429, 61);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox8.TabIndex = 32;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Visible = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox9.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox9.Location = new System.Drawing.Point(506, 61);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox9.TabIndex = 32;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Visible = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox10.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox10.Location = new System.Drawing.Point(583, 61);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox10.TabIndex = 32;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Visible = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox11.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox11.Location = new System.Drawing.Point(660, 61);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox11.TabIndex = 32;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Visible = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox12.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox12.Location = new System.Drawing.Point(737, 61);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox12.TabIndex = 32;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DurakForm.Properties.Resources.c1;
-            this.pictureBox1.InitialImage = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.pictureBox1.Location = new System.Drawing.Point(737, 488);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 96);
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            card2.FaceUp = false;
+            card2.Rank = CardsLibrary.RankEnum.Two;
+            card2.Suit = CardsLibrary.SuitEnum.Clubs;
+            card2.value = 0;
+            this.cbxTestCard.Card = card2;
+            this.cbxTestCard.CardOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.cbxTestCard.FaceUp = false;
+            this.cbxTestCard.Location = new System.Drawing.Point(376, 471);
+            this.cbxTestCard.Name = "cbxTestCard";
+            this.cbxTestCard.Rank = CardsLibrary.RankEnum.Two;
+            this.cbxTestCard.Size = new System.Drawing.Size(75, 107);
+            this.cbxTestCard.Suit = CardsLibrary.SuitEnum.Clubs;
+            this.cbxTestCard.TabIndex = 32;
+            this.cbxTestCard.Click += new System.EventHandler(this.cbxTestCard_Click_1);
             // 
             // frmDurakGame
             // 
@@ -469,18 +330,7 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox10);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.cbxTestCard);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
@@ -509,18 +359,7 @@ namespace DurakForm
             this.Controls.Add(this.lblTrumpCard);
             this.Name = "frmDurakGame";
             this.Text = "Durak Game";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frmDurakGame_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,18 +393,7 @@ namespace DurakForm
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private CardBox.CardBox cbxTestCard;
     }
 }
 

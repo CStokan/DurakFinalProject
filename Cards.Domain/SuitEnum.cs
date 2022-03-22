@@ -8,9 +8,9 @@ namespace CardsLibrary
 {
     public enum SuitEnum
     {
-        Club = 'c',
-        Diamond = 'd',
-        Heart = 'h',
-        Spade = 's'
+        Clubs,
+        Diamonds,
+        Hearts,
+        Spades
     }
 }
