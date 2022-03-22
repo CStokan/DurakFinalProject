@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DurakGame", "DurakGame\Dura
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DurakForm", "DurakForm\DurakForm.csproj", "{1997EEFF-7D0A-4130-A7D5-AE9A230F2E16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardBox", "CardBox\CardBox.csproj", "{72E57B29-A7D7-4050-97FB-F09321BD20CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardBoxLib", "CardBox\CardBoxLib.csproj", "{72E57B29-A7D7-4050-97FB-F09321BD20CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

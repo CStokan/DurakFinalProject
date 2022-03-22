@@ -29,7 +29,6 @@ namespace DurakForm
         /// </summary>
         private void InitializeComponent()
         {
-            CardsLibrary.Card card2 = new CardsLibrary.Card();
             this.lblTrumpCard = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -45,7 +44,6 @@ namespace DurakForm
             this.richTextBox7 = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.playerSide = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.computerSide = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -56,7 +54,7 @@ namespace DurakForm
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.cbxTestCard = new CardBox.CardBox();
+            this.flowPlayersHand = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -205,16 +203,6 @@ namespace DurakForm
             this.label11.Size = new System.Drawing.Size(76, 30);
             this.label11.TabIndex = 19;
             // 
-            // playerSide
-            // 
-            this.playerSide.BackColor = System.Drawing.SystemColors.Window;
-            this.playerSide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.playerSide.Image = global::DurakForm.Properties.Resources.TableWoodTexPlayerSide1;
-            this.playerSide.Location = new System.Drawing.Point(324, 461);
-            this.playerSide.Name = "playerSide";
-            this.playerSide.Size = new System.Drawing.Size(524, 149);
-            this.playerSide.TabIndex = 0;
-            // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.Transparent;
@@ -306,22 +294,14 @@ namespace DurakForm
             this.label20.Size = new System.Drawing.Size(102, 145);
             this.label20.TabIndex = 31;
             // 
-            // cbxTestCard
+            // flowPlayersHand
             // 
-            card2.FaceUp = false;
-            card2.Rank = CardsLibrary.RankEnum.Two;
-            card2.Suit = CardsLibrary.SuitEnum.Clubs;
-            card2.value = 0;
-            this.cbxTestCard.Card = card2;
-            this.cbxTestCard.CardOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.cbxTestCard.FaceUp = false;
-            this.cbxTestCard.Location = new System.Drawing.Point(376, 471);
-            this.cbxTestCard.Name = "cbxTestCard";
-            this.cbxTestCard.Rank = CardsLibrary.RankEnum.Two;
-            this.cbxTestCard.Size = new System.Drawing.Size(75, 107);
-            this.cbxTestCard.Suit = CardsLibrary.SuitEnum.Clubs;
-            this.cbxTestCard.TabIndex = 32;
-            this.cbxTestCard.Click += new System.EventHandler(this.cbxTestCard_Click_1);
+            this.flowPlayersHand.BackgroundImage = global::DurakForm.Properties.Resources.TableWoodTexRiver;
+            this.flowPlayersHand.Location = new System.Drawing.Point(323, 458);
+            this.flowPlayersHand.Name = "flowPlayersHand";
+            this.flowPlayersHand.Size = new System.Drawing.Size(538, 146);
+            this.flowPlayersHand.TabIndex = 33;
+            this.flowPlayersHand.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // frmDurakGame
             // 
@@ -330,7 +310,7 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
-            this.Controls.Add(this.cbxTestCard);
+            this.Controls.Add(this.flowPlayersHand);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
@@ -338,7 +318,6 @@ namespace DurakForm
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.playerSide);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.computerSide);
             this.Controls.Add(this.label8);
@@ -385,7 +364,6 @@ namespace DurakForm
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label computerSide;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label playerSide;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
@@ -393,7 +371,7 @@ namespace DurakForm
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private CardBox.CardBox cbxTestCard;
+        private System.Windows.Forms.FlowLayoutPanel flowPlayersHand;
     }
 }
 
