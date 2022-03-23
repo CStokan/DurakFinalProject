@@ -13,6 +13,16 @@ namespace CardsLibrary
         /// </summary>
         private Cards cards = new Cards();
 
+        int startDeckAt;
+
+        public Cards Cards
+        {
+            get { return cards; }
+            set
+            {
+                cards = value;
+            }
+        }
 
 
         /// <summary>
@@ -80,11 +90,25 @@ namespace CardsLibrary
             }
             return deckToString;
         }
-
         public void Shuffle()
         {
-
-            
+            Cards newDeck = new Cards();
+            bool[] assigned = new bool[startDeckAt];
+            Random sourceGen = new Random();
+            for (int i = 0; i < startDeckAt; i++)
+            {
+                int sourceCard = 0;
+                bool foundCard = false;
+                while (foundCard == false)
+                {
+                    sourceCard = sourceGen.Next(startDeckAt);
+                    if (assigned[sourceCard] == false)
+                        foundCard = true;
+                }
+                assigned[sourceCard] = true;
+                newDeck.Add(Cards[sourceCard]);
+            }
+            newDeck.CopyTo(Cards);
         }
 
 
@@ -103,9 +127,9 @@ namespace CardsLibrary
         /// <param name="deckSize"></param>
         public Deck(int deckSize)
         {
-            int startDeckAt;
 
-            if(deckSize == 52)
+            startDeckAt = deckSize;
+            if(startDeckAt == 52)
             {
                 for (int suitVal = 0; suitVal < 4; suitVal++)
                 {
@@ -115,13 +139,13 @@ namespace CardsLibrary
                     }
                 }
             }
-            else if(deckSize == 36)
+            else if(startDeckAt == 36)
             {
-                startDeckAt = 6;
+                
                 for (int suitVal = 0; suitVal < 4; suitVal++)
                 {
                     cards.Add(new Card((SuitEnum)suitVal, (RankEnum.Ace)));
-                    for (int rankVal = startDeckAt; rankVal < 14; rankVal++)
+                    for (int rankVal = 6; rankVal < 14; rankVal++)
                     {
                         cards.Add(new Card((SuitEnum)suitVal, (RankEnum)rankVal));
                     }

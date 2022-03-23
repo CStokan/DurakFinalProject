@@ -57,6 +57,7 @@ namespace DurakForm
             flowComputersHand.Controls.Clear();
             // Create a new deck
             myDeck = new Deck(36);
+            myDeck.Shuffle();
 
 
 
