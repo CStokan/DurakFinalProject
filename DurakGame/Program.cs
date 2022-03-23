@@ -19,7 +19,7 @@ namespace DurakGame
             //
             //Player player1 = new Player(player1Hand);
             //Player player2 = new Player(player2Hand);
-            Deck myDeck = new Deck(52);
+            Deck myDeck = new Deck(36);
             Cards myCard = new Cards();
 
             Hand player1Hand = new Hand();
@@ -33,7 +33,7 @@ namespace DurakGame
             Console.WriteLine(myDeck.ToString());
             Console.WriteLine("Deal 6 cards to each player\n");
 
-            for (int i = 0; i <= 51; i++)
+            for (int i = 0; i <= 35; i++)
             {
                 int card = 0;
                 Console.WriteLine(myDeck.GetCard(card).ToString());

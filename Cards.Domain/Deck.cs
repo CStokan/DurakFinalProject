@@ -47,6 +47,7 @@ namespace CardsLibrary
             cards = newCards;
         }
 
+ 
 
 
         /// <summary>
@@ -80,6 +81,13 @@ namespace CardsLibrary
             return deckToString;
         }
 
+        public void Shuffle()
+        {
+
+            
+        }
+
+
         /// <summary>
         /// Allows the deck to use the cards.Count method
         /// </summary>
@@ -109,9 +117,10 @@ namespace CardsLibrary
             }
             else if(deckSize == 36)
             {
-                startDeckAt = 5;
+                startDeckAt = 6;
                 for (int suitVal = 0; suitVal < 4; suitVal++)
                 {
+                    cards.Add(new Card((SuitEnum)suitVal, (RankEnum.Ace)));
                     for (int rankVal = startDeckAt; rankVal < 14; rankVal++)
                     {
                         cards.Add(new Card((SuitEnum)suitVal, (RankEnum)rankVal));
@@ -150,6 +159,8 @@ namespace CardsLibrary
             cards.RemoveAt(0);
             return card;
         }
+
+
 
 
         /// <summary>

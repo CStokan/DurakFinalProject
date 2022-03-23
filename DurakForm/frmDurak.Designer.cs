@@ -31,7 +31,6 @@ namespace DurakForm
         {
             this.lblTrumpCard = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
@@ -44,16 +43,15 @@ namespace DurakForm
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.flowPlayersHand = new System.Windows.Forms.FlowLayoutPanel();
             this.flowComputersHand = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowRiverHand = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -64,7 +62,6 @@ namespace DurakForm
             this.lblTrumpCard.Name = "lblTrumpCard";
             this.lblTrumpCard.Size = new System.Drawing.Size(0, 13);
             this.lblTrumpCard.TabIndex = 0;
-            this.lblTrumpCard.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnStart
             // 
@@ -76,15 +73,6 @@ namespace DurakForm
             this.btnStart.TabIndex = 2;
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.richTextBox2.Location = new System.Drawing.Point(323, 248);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(524, 149);
-            this.richTextBox2.TabIndex = 3;
-            this.richTextBox2.Text = "";
             // 
             // label1
             // 
@@ -132,7 +120,6 @@ namespace DurakForm
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(144, 27);
             this.label4.TabIndex = 10;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -161,7 +148,6 @@ namespace DurakForm
             this.label7.Size = new System.Drawing.Size(101, 25);
             this.label7.TabIndex = 14;
             this.label7.Text = "Score";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // richTextBox7
             // 
@@ -170,7 +156,6 @@ namespace DurakForm
             this.richTextBox7.Size = new System.Drawing.Size(100, 96);
             this.richTextBox7.TabIndex = 15;
             this.richTextBox7.Text = "Computer:\n------------\nPlayer:";
-            this.richTextBox7.TextChanged += new System.EventHandler(this.richTextBox7_TextChanged);
             // 
             // label10
             // 
@@ -197,19 +182,10 @@ namespace DurakForm
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Cursor = System.Windows.Forms.Cursors.No;
             this.label8.Image = global::DurakForm.Properties.Resources.TrumpCard1;
-            this.label8.Location = new System.Drawing.Point(1076, 440);
+            this.label8.Location = new System.Drawing.Point(1071, 365);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 23);
             this.label8.TabIndex = 22;
-            // 
-            // label12
-            // 
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label12.Image = global::DurakForm.Properties.Resources.TableWoodTexRiver;
-            this.label12.Location = new System.Drawing.Point(323, 248);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(524, 149);
-            this.label12.TabIndex = 24;
             // 
             // label14
             // 
@@ -250,14 +226,6 @@ namespace DurakForm
             this.label17.Size = new System.Drawing.Size(103, 140);
             this.label17.TabIndex = 28;
             // 
-            // label18
-            // 
-            this.label18.Image = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.label18.Location = new System.Drawing.Point(1079, 471);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(102, 145);
-            this.label18.TabIndex = 29;
-            // 
             // label19
             // 
             this.label19.Image = global::DurakForm.Properties.Resources.PlayingCardBack;
@@ -276,12 +244,15 @@ namespace DurakForm
             // 
             // flowPlayersHand
             // 
+            this.flowPlayersHand.AutoScroll = true;
             this.flowPlayersHand.BackgroundImage = global::DurakForm.Properties.Resources.TableWoodTexRiver;
+            this.flowPlayersHand.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.flowPlayersHand.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowPlayersHand.Location = new System.Drawing.Point(323, 458);
+            this.flowPlayersHand.Margin = new System.Windows.Forms.Padding(1);
             this.flowPlayersHand.Name = "flowPlayersHand";
             this.flowPlayersHand.Size = new System.Drawing.Size(538, 146);
             this.flowPlayersHand.TabIndex = 33;
-            this.flowPlayersHand.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // flowComputersHand
             // 
@@ -291,6 +262,14 @@ namespace DurakForm
             this.flowComputersHand.Size = new System.Drawing.Size(538, 146);
             this.flowComputersHand.TabIndex = 34;
             // 
+            // flowRiverHand
+            // 
+            this.flowRiverHand.BackgroundImage = global::DurakForm.Properties.Resources.TableWoodTexRiver;
+            this.flowRiverHand.Location = new System.Drawing.Point(316, 248);
+            this.flowRiverHand.Name = "flowRiverHand";
+            this.flowRiverHand.Size = new System.Drawing.Size(538, 146);
+            this.flowRiverHand.TabIndex = 35;
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,16 +277,15 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.flowRiverHand);
             this.Controls.Add(this.flowComputersHand);
             this.Controls.Add(this.flowPlayersHand);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -320,7 +298,6 @@ namespace DurakForm
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lblTrumpCard);
             this.Name = "frmDurakGame";
@@ -335,7 +312,6 @@ namespace DurakForm
 
         private System.Windows.Forms.Label lblTrumpCard;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richTextBox3;
@@ -348,16 +324,15 @@ namespace DurakForm
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.FlowLayoutPanel flowPlayersHand;
         private System.Windows.Forms.FlowLayoutPanel flowComputersHand;
+        private System.Windows.Forms.FlowLayoutPanel flowRiverHand;
     }
 }
 

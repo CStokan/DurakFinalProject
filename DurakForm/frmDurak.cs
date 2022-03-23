@@ -14,11 +14,34 @@ namespace DurakForm
     public partial class frmDurakGame : Form
     {
 
-        Deck myDeck = new Deck(36);
+        Deck myDeck = new Deck();
+        Cards myCard = new Cards();
+
+        static Hand player1Hand = new Hand();
+        static Hand player2Hand = new Hand();
+
+        Player player1 = new Player(player1Hand);
+        Player player2 = new Player(player2Hand);
+        
+
+
         public frmDurakGame()
         {
             InitializeComponent();
             
+            
+        }
+
+        private void frmDurakGame_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void playerClickCard(object sender, EventArgs e)
+        {
+            CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
+            Card cardClicked = cardBoxClicked.Card;
+
             
         }
 
@@ -27,81 +50,63 @@ namespace DurakForm
             
         }
 
-
-
-        private void label1_Click(object sender, EventArgs e)
+        public void DealCards(Player player1, Player player2)
         {
+            // Clear controls
+            flowPlayersHand.Controls.Clear();
+            flowComputersHand.Controls.Clear();
+            // Create a new deck
+            myDeck = new Deck(36);
 
+
+
+            for (int i = 0; i < 6; i++)
+            {
+                // Deal to player
+                CardBox.CardBox newCardbox = new CardBox.CardBox();
+                
+                player1.AddCardToHand(myDeck.DrawCard());
+                newCardbox.Card = player1.ChooseCardFromHand(i);
+                newCardbox.FaceUp = true;
+                flowPlayersHand.Controls.Add(newCardbox);
+                newCardbox.Click += PlayerClickEvent;
+
+                // Deal to computer
+                CardBox.CardBox newCardbox1 = new CardBox.CardBox();
+                player2.AddCardToHand(myDeck.DrawCard());
+                newCardbox1.Card = player2.ChooseCardFromHand(i);
+                newCardbox1.FaceUp = true;
+                flowComputersHand.Controls.Add(newCardbox1);
+                newCardbox1.Click += ComputerClickEvent;
+
+            }
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void ComputerClickEvent(object sender, EventArgs e)
         {
-
+            throw new NotImplementedException();
         }
 
-        private void richTextBox7_TextChanged(object sender, EventArgs e)
+        private void PlayerClickEvent(object sender, EventArgs e)
         {
+            CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
+            Card cardClicked = cardBoxClicked.Card;
 
+            flowRiverHand.Controls.Add(cardBoxClicked);
+
+            lblTrumpCard.Text = player1.ToString();
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
 
         private void btnStart_Click(object sender, EventArgs e)
         {
 
-            // Add to computers hand
-            CardBox.CardBox newCardbox = new CardBox.CardBox();
             
-            newCardbox.Card = myDeck.DrawCard();
-            newCardbox.FaceUp = true;
-            flowComputersHand.Controls.Add(newCardbox);
+            DealCards(player1, player2);
 
-
-            // Add to players han d
-            CardBox.CardBox newCardbox1 = new CardBox.CardBox();
-
-            newCardbox1.Card = myDeck.DrawCard();
-            newCardbox1.FaceUp = true;
-            flowPlayersHand.Controls.Add(newCardbox1);
-
-        }
-
-        private void cbxTestCard_Click(object sender, EventArgs e)
-        {
             
-        }
-
-        private void cbxTestCard_Load(object sender, EventArgs e)
-        {
 
         }
 
-        private void cbxTestCard_Click_1(object sender, EventArgs e)
-        {
 
-        }
-
-        private void frmDurakGame_Load(object sender, EventArgs e)
-        {
-   
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
