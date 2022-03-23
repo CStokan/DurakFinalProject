@@ -92,14 +92,14 @@ namespace DurakForm
             CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
             Card cardClicked = cardBoxClicked.Card;
 
-            flowRiverHand.Controls.Add(cardBoxClicked);
+            flowRiverHand.Controls.Add(cardBoxClicked); 
 
             lblTrumpCard.Text = player1.ToString();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-
+            
             
             DealCards(player1, player2);
 
