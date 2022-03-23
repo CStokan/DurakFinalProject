@@ -78,15 +78,10 @@ namespace DurakForm
                 newCardbox1.Card = player2.ChooseCardFromHand(i);
                 newCardbox1.FaceUp = true;
                 flowComputersHand.Controls.Add(newCardbox1);
-                newCardbox1.Click += ComputerClickEvent;
 
             }
         }
 
-        private void ComputerClickEvent(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void PlayerClickEvent(object sender, EventArgs e)
         {

@@ -90,6 +90,10 @@ namespace CardsLibrary
             }
             return deckToString;
         }
+
+        /// <summary>
+        /// SHuffles the deck of cards depending on where the deck is shuffled
+        /// </summary>
         public void Shuffle()
         {
             Cards newDeck = new Cards();
