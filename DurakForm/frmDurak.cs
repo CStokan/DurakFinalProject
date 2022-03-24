@@ -15,7 +15,6 @@ namespace DurakForm
     {
 
         Deck myDeck = new Deck();
-        Cards myCard = new Cards();
 
         static Hand player1Hand = new Hand();
         static Hand player2Hand = new Hand();
@@ -96,13 +95,8 @@ namespace DurakForm
         private void btnStart_Click(object sender, EventArgs e)
         {
             
-            
             DealCards(player1, player2);
 
-            
-
         }
-
-
     }
 }

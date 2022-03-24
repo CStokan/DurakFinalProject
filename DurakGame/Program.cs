@@ -41,26 +41,6 @@ namespace DurakGame
                 card++;
             } 
 
-            //Console.WriteLine("Cards in Deck: " + myDeck.DeckCount());
-            //Console.WriteLine(myDeck.ToString());
-            //Console.WriteLine("Deal 6 cards to each player\n");
-            //
-            //Console.WriteLine(myDeck.DrawCards(6).ToString());
-            //
-            //// Mock deal 6 cards to 2 players
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    player1.AddCardToHand(myDeck.DrawCard());
-            //    player2.AddCardToHand(myDeck.DrawCard());
-            //}
-            //
-            //
-            //Console.WriteLine("Player 1");
-            //Console.WriteLine(player1.ToString());
-            //
-            //Console.WriteLine("Player 2");
-            //Console.WriteLine(player2.ToString());
-
             Console.WriteLine("\nCards in Deck: " + myDeck.DeckCount());
 
             Console.ReadKey();
