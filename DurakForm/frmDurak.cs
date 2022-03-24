@@ -139,7 +139,7 @@ namespace DurakForm
             RemoveFromPlayerAddToRiver(player1, cardClicked);
             // Move it to flowBox
             flowPlayersHand.Controls.Remove(cardBoxClicked);
-            flowRiverHand.Controls.Add(cardBoxClicked);
+            flowRiverHand.Controls.Add(riverCardBox);
 
             ComputerMove();
 
