@@ -57,10 +57,6 @@ namespace DurakForm
             // Clear controls
             flowPlayersHand.Controls.Clear();
             flowComputersHand.Controls.Clear();
-            
-
-            
-
 
 
             for (int i = 0; i < 6; i++)
@@ -150,15 +146,14 @@ namespace DurakForm
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            Player player1 = new Player(player1Hand);
+            Player player2 = new Player(player2Hand);
 
-   
             // Create a new deck
             myDeck = new Deck(36);
             myDeck.Shuffle();
             DealCards(player1, player2);
             flowRiverHand.Controls.Clear();
-
-
 
         }
     }
