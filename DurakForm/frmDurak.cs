@@ -141,9 +141,14 @@ namespace DurakForm
 
             ComputerMove();
 
+            
             RiverLabel.Text = riverHand.ToString();
             PlayerLabel.Text = player1.ToString();
             ComputerLabel.Text = player2.ToString();
+
+            CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();  
+
+
         }
 
         private void btnStart_Click(object sender, EventArgs e)
