@@ -19,10 +19,11 @@ namespace DurakForm
 
         static Hand player1Hand = new Hand();
         static Hand player2Hand = new Hand();
+        static Hand trumpCard = new Hand();
 
         Player player1 = new Player(player1Hand);
         Player player2 = new Player(player2Hand);
-        
+        Player trumpCardPick = new Player(trumpCard);
 
 
         public frmDurakGame()
@@ -80,6 +81,27 @@ namespace DurakForm
                 flowComputersHand.Controls.Add(newCardbox1);
 
             }
+            // Trump Card
+            CardBox.CardBox trumpCardBox = new CardBox.CardBox();
+
+            trumpCardPick.AddCardToHand(myDeck.DrawCard());
+            trumpCardBox.Card = trumpCardPick.ChooseCardFromHand(0);
+            trumpCardBox.FaceUp = true;
+            flpTrumpCard.Controls.Add(trumpCardBox);
+        }
+
+        private void ComputerMove()
+        {
+
+
+            CardBox.CardBox newCardbox1 = new CardBox.CardBox();
+
+            newCardbox1.Card = player2.ChooseCardFromHand(0);
+
+            flowRiverHand.Controls.Add(newCardbox1);
+            flowComputersHand.Controls.Remove(newCardbox1);
+            newCardbox1.FaceUp = true;
+
         }
 
 
@@ -88,9 +110,9 @@ namespace DurakForm
             CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
             Card cardClicked = cardBoxClicked.Card;
 
-            flowRiverHand.Controls.Add(cardBoxClicked); 
+            flowRiverHand.Controls.Add(cardBoxClicked);
 
-            lblTrumpCard.Text = player1.ToString();
+            ComputerMove();
         }
 
         private void btnStart_Click(object sender, EventArgs e)

@@ -52,6 +52,7 @@ namespace DurakForm
             this.flowPlayersHand = new System.Windows.Forms.FlowLayoutPanel();
             this.flowComputersHand = new System.Windows.Forms.FlowLayoutPanel();
             this.flowRiverHand = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpTrumpCard = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -270,6 +271,14 @@ namespace DurakForm
             this.flowRiverHand.Size = new System.Drawing.Size(538, 146);
             this.flowRiverHand.TabIndex = 35;
             // 
+            // flpTrumpCard
+            // 
+            this.flpTrumpCard.BackgroundImage = global::DurakForm.Properties.Resources.TableWoodTexRiver;
+            this.flpTrumpCard.Location = new System.Drawing.Point(1084, 402);
+            this.flpTrumpCard.Name = "flpTrumpCard";
+            this.flpTrumpCard.Size = new System.Drawing.Size(75, 107);
+            this.flpTrumpCard.TabIndex = 36;
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +286,7 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.flpTrumpCard);
             this.Controls.Add(this.flowRiverHand);
             this.Controls.Add(this.flowComputersHand);
             this.Controls.Add(this.flowPlayersHand);
@@ -333,6 +343,7 @@ namespace DurakForm
         private System.Windows.Forms.FlowLayoutPanel flowPlayersHand;
         private System.Windows.Forms.FlowLayoutPanel flowComputersHand;
         private System.Windows.Forms.FlowLayoutPanel flowRiverHand;
+        private System.Windows.Forms.FlowLayoutPanel flpTrumpCard;
     }
 }
 
