@@ -126,14 +126,19 @@ namespace DurakForm
 
         private void PlayerClickEvent(object sender, EventArgs e)
         {
+            // Takes the clicked card
             CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
             Card cardClicked = cardBoxClicked.Card;
+
+            // This is created to stop the river card from being clickable
+            CardBox.CardBox riverCardBox = new CardBox.CardBox();
+            riverCardBox.Card = cardBoxClicked.Card;
 
             // Remove clicked card from player hand
             // Add card to river hand
             RemoveFromPlayerAddToRiver(player1, cardClicked);
             // Move it to flowBox
-            flowRiverHand.Controls.Add(cardBoxClicked);
+            flowRiverHand.Controls.Add(riverCardBox);
 
             ComputerMove();
 
@@ -144,7 +149,9 @@ namespace DurakForm
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+
             
+
             // Create a new deck
             myDeck = new Deck(36);
             myDeck.Shuffle();
