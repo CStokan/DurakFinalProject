@@ -12,6 +12,15 @@ namespace CardsLibrary
 
         private Hand hand = new Hand();
 
+        public Hand Hand
+        {
+            get { return hand; }
+            set
+            {
+                hand = value;
+            }
+        }
+
         /// <summary>
         /// default player construct 
         /// </summary>

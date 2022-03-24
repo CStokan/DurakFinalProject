@@ -18,11 +18,13 @@ namespace DurakForm
 
         static Hand player1Hand = new Hand();
         static Hand player2Hand = new Hand();
-        static Hand trumpCard = new Hand();
+        public Hand riverHand = new Hand();
+        public Hand trumpCard = new Hand();
 
         Player player1 = new Player(player1Hand);
         Player player2 = new Player(player2Hand);
-        Player trumpCardPick = new Player(trumpCard);
+        
+       
 
 
         public frmDurakGame()
@@ -55,9 +57,9 @@ namespace DurakForm
             // Clear controls
             flowPlayersHand.Controls.Clear();
             flowComputersHand.Controls.Clear();
-            // Create a new deck
-            myDeck = new Deck(36);
-            myDeck.Shuffle();
+            
+
+            
 
 
 
@@ -83,8 +85,8 @@ namespace DurakForm
             // Trump Card
             CardBox.CardBox trumpCardBox = new CardBox.CardBox();
 
-            trumpCardPick.AddCardToHand(myDeck.DrawCard());
-            trumpCardBox.Card = trumpCardPick.ChooseCardFromHand(0);
+            trumpCard.AddCardToHand(myDeck.DrawCard());
+            trumpCardBox.Card = trumpCard.ChooseCardFromHand(0);
             trumpCardBox.FaceUp = true;
             flpTrumpCard.Controls.Add(trumpCardBox);
         }
@@ -95,29 +97,61 @@ namespace DurakForm
 
             CardBox.CardBox newCardbox1 = new CardBox.CardBox();
 
+            
+            // Take the card at 0 and remove it from computers hand
             newCardbox1.Card = player2.ChooseCardFromHand(0);
-
             flowRiverHand.Controls.Add(newCardbox1);
+
+            riverHand.AddCardToHand(player2.ChooseCardFromHand(0));
+
+            flowComputersHand.Controls.RemoveAt(0);
+            player2.RemoveCardFromHand(player2.GetCard(0));
+
             flowComputersHand.Controls.Remove(newCardbox1);
             newCardbox1.FaceUp = true;
 
         }
 
+        /// <summary>
+        /// Takes a card from a player and removes it then adds to riverhand
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="cardToRemove"></param>
+        private void RemoveFromPlayerAddToRiver(Player player, Card cardToRemove)
+        {
+            player.RemoveCardFromHand(cardToRemove);
+            riverHand.AddCardToHand(cardToRemove);
+            
+        }
 
         private void PlayerClickEvent(object sender, EventArgs e)
         {
             CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
             Card cardClicked = cardBoxClicked.Card;
 
+            // Remove clicked card from player hand
+            // Add card to river hand
+            RemoveFromPlayerAddToRiver(player1, cardClicked);
+            // Move it to flowBox
             flowRiverHand.Controls.Add(cardBoxClicked);
 
             ComputerMove();
+
+            RiverLabel.Text = riverHand.ToString();
+            PlayerLabel.Text = player1.ToString();
+            ComputerLabel.Text = player2.ToString();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
             
+            // Create a new deck
+            myDeck = new Deck(36);
+            myDeck.Shuffle();
             DealCards(player1, player2);
+            flowRiverHand.Controls.Clear();
+
+
 
         }
     }

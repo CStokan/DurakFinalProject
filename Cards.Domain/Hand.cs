@@ -7,11 +7,23 @@ using System.Threading.Tasks;
 
 namespace CardsLibrary
 {
-    public class Hand
+    public class Hand 
     {
 
         private Cards cards = new Cards();
+        private Card card = new Card();
         private int handsCardsNum = 0;
+
+
+        public Cards Cards
+        {
+            get { return cards; }
+            set
+            {
+                cards = value;
+            }
+        }
+
 
         /// <summary>
         /// Parameterized constructor 
@@ -36,6 +48,12 @@ namespace CardsLibrary
         public void AddCardToHand(Card cardToAdd)
         {
             cards.Add(cardToAdd);
+            handsCardsNum = cards.Count();
+        }
+
+        public void RemoveCardFromHand(Card cardToAdd)
+        {
+            cards.Remove(cardToAdd);
             handsCardsNum = cards.Count();
         }
 
