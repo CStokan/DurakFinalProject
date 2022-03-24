@@ -57,6 +57,7 @@ namespace DurakForm
             // Clear controls
             flowPlayersHand.Controls.Clear();
             flowComputersHand.Controls.Clear();
+            flpTrumpCard.Controls.Clear();
 
 
             for (int i = 0; i < 6; i++)
@@ -146,8 +147,10 @@ namespace DurakForm
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            // Making new players/trumpcard for when you want to reset the game
             Player player1 = new Player(player1Hand);
             Player player2 = new Player(player2Hand);
+            trumpCard = new Hand();
 
             // Create a new deck
             myDeck = new Deck(36);
