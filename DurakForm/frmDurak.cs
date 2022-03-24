@@ -60,6 +60,7 @@ namespace DurakForm
             flpTrumpCard.Controls.Clear();
 
 
+
             for (int i = 0; i < 6; i++)
             {
                 // Deal to player
@@ -75,7 +76,7 @@ namespace DurakForm
                 CardBox.CardBox newCardbox1 = new CardBox.CardBox();
                 player2.AddCardToHand(myDeck.DrawCard());
                 newCardbox1.Card = player2.ChooseCardFromHand(i);
-                newCardbox1.FaceUp = true;
+                newCardbox1.FaceUp = false;
                 flowComputersHand.Controls.Add(newCardbox1);
 
             }
@@ -147,16 +148,28 @@ namespace DurakForm
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            // Making new players/trumpcard for when you want to reset the game
-            Player player1 = new Player(player1Hand);
-            Player player2 = new Player(player2Hand);
+            // Emptying labels so there is no stacking on reset
+            RiverLabel.Text = String.Empty;
+            PlayerLabel.Text = String.Empty;
+            ComputerLabel.Text = String.Empty;
+
+            // Creating new player hands and trump on reset
+            player1Hand = new Hand();
+            player2Hand = new Hand();
+            riverHand = new Hand();
             trumpCard = new Hand();
+
+            // Creating new player hands so the cards switch on reset
+            player1 = new Player(player1Hand);
+            player2 = new Player(player2Hand);
 
             // Create a new deck
             myDeck = new Deck(36);
             myDeck.Shuffle();
             DealCards(player1, player2);
             flowRiverHand.Controls.Clear();
+
+
 
         }
     }
