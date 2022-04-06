@@ -4,10 +4,11 @@ using System.Linq;
 using System.Collections;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace CardsLibrary
 {
-    public class Cards : List<Card>, ICloneable
+    public class Cards : ObservableCollection<Card>, ICloneable
     {
 
         /// <summary>
@@ -59,6 +60,8 @@ namespace CardsLibrary
                 targetCards[index] = this[index];
             }
         }
+
+ 
 
 
         //gets a card based on int number

@@ -42,6 +42,11 @@ namespace CardsLibrary
         {
         }
 
+        public int HandCount()
+        {
+            return cards.Count;
+        }
+
         /// <summary>
         /// Adds a card to the Hands hand
         /// </summary>

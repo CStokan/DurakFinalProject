@@ -93,18 +93,18 @@ namespace DurakForm
 
         private void ComputerMove()
         {
-            RiverLabel.Text = "You made it here 0";
+            
 
             CardBox.CardBox newCardbox1 = new CardBox.CardBox();
-            for (int i = 0; i < player2.Count; i++)
+            for (int i = 0; i < player2.HandCount(); i++)
             {
                 RiverLabel.Text = "You made it here 1";
-                if (riverHand.Count > 0)
+                if (riverHand.HandCount() > 0)
 
                     RiverLabel.Text = "You made it here 1";
                 if (
-                        ((player2[i].Rank == riverHand[riverHand.Count - 1].Rank) ||
-                        ((player2[i].Suit == riverHand[riverHand.Count - 1].Suit) && riverHand[i] > riverHand[riverHand.Count - 1])))
+                        ((player2.GetCard(i).Rank == riverHand.GetCard(riverHand.HandCount() - 1).Rank) ||
+                        ((player2.GetCard(i).Suit == riverHand[riverHand.HandCount() - 1].Suit) && riverHand[i] > riverHand[riverHand.HandCount() - 1])))
                     {
                         newCardbox1.Card = player2.ChooseCardFromHand(i);
                         flowRiverHand.Controls.Add(newCardbox1);

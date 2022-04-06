@@ -41,6 +41,8 @@ namespace DurakGame
                 card++;
             } 
 
+
+
             Console.WriteLine("\nCards in Deck: " + myDeck.DeckCount());
 
             Console.ReadKey();
