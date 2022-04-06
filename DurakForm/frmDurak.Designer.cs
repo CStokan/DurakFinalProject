@@ -57,6 +57,7 @@ namespace DurakForm
             this.ComputerLabel = new System.Windows.Forms.Label();
             this.RiverLabel = new System.Windows.Forms.Label();
             this.CardsRemainingLabel = new System.Windows.Forms.Label();
+            this.testlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -318,6 +319,15 @@ namespace DurakForm
             this.CardsRemainingLabel.Size = new System.Drawing.Size(0, 13);
             this.CardsRemainingLabel.TabIndex = 40;
             // 
+            // testlabel
+            // 
+            this.testlabel.AutoSize = true;
+            this.testlabel.Location = new System.Drawing.Point(184, 82);
+            this.testlabel.Name = "testlabel";
+            this.testlabel.Size = new System.Drawing.Size(35, 13);
+            this.testlabel.TabIndex = 41;
+            this.testlabel.Text = "label9";
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +335,7 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.testlabel);
             this.Controls.Add(this.CardsRemainingLabel);
             this.Controls.Add(this.RiverLabel);
             this.Controls.Add(this.ComputerLabel);
@@ -391,6 +402,7 @@ namespace DurakForm
         private System.Windows.Forms.Label ComputerLabel;
         private System.Windows.Forms.Label RiverLabel;
         private System.Windows.Forms.Label CardsRemainingLabel;
+        private System.Windows.Forms.Label testlabel;
     }
 }
 

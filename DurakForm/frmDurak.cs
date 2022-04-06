@@ -76,7 +76,7 @@ namespace DurakForm
                 CardBox.CardBox newCardbox1 = new CardBox.CardBox();
                 player2.AddCardToHand(myDeck.DrawCard());
                 newCardbox1.Card = player2.ChooseCardFromHand(i);
-                newCardbox1.FaceUp = false;
+                newCardbox1.FaceUp = true;
                 flowComputersHand.Controls.Add(newCardbox1);
 
             }
@@ -90,21 +90,21 @@ namespace DurakForm
         }
 
 
-
+        /// <summary>
+        /// This is how the computer determines what card to play
+        /// </summary>
         private void ComputerMove()
         {
-            
+            RiverLabel.Text = trumpCard.ToString();
 
             CardBox.CardBox newCardbox1 = new CardBox.CardBox();
             for (int i = 0; i < player2.HandCount(); i++)
             {
-                RiverLabel.Text = "You made it here 1";
+                int cardCount = 0;
                 if (riverHand.HandCount() > 0)
-
-                    RiverLabel.Text = "You made it here 1";
-                if (
-                        ((player2.GetCard(i).Rank == riverHand.GetCard(riverHand.HandCount() - 1).Rank) ||
-                        ((player2.GetCard(i).Suit == riverHand[riverHand.HandCount() - 1].Suit) && riverHand[i] > riverHand[riverHand.HandCount() - 1])))
+                {
+                    if  (player2.GetCard(0).Rank > riverHand.GetCard(0 + cardCount).Rank ||
+                        ((player2.GetCard(i).Suit == riverHand.GetCard(0 + cardCount).Suit) && player2.GetCard(0) > riverHand.GetCard(0 + cardCount)))
                     {
                         newCardbox1.Card = player2.ChooseCardFromHand(i);
                         flowRiverHand.Controls.Add(newCardbox1);
@@ -116,10 +116,9 @@ namespace DurakForm
 
                         flowComputersHand.Controls.Remove(newCardbox1);
                         newCardbox1.FaceUp = true;
-                }
-                else
-                {
-                    RiverLabel.Text = "You made it here 3";
+                        cardCount++;
+                        break;
+                    }
                 }
                 
             }
@@ -171,9 +170,9 @@ namespace DurakForm
 
             ComputerMove();
 
-            //RiverLabel.Text = riverHand.ToString();
-            //PlayerLabel.Text = player1.ToString();
-            //ComputerLabel.Text = player2.ToString();
+            RiverLabel.Text = riverHand.ToString();
+            PlayerLabel.Text = player1.ToString();
+            ComputerLabel.Text = player2.ToString();
 
             CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();  
 
@@ -186,6 +185,7 @@ namespace DurakForm
             RiverLabel.Text = String.Empty;
             PlayerLabel.Text = String.Empty;
             ComputerLabel.Text = String.Empty;
+            testlabel.Text = String.Empty;
 
             // Creating new player hands and trump on reset
             player1Hand = new Hand();
