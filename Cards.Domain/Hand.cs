@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CardsLibrary
 {
-    public class Hand 
+    public class Hand : ObservableCollection<Card>
     {
 
         private Cards cards = new Cards();

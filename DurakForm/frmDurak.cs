@@ -89,6 +89,8 @@ namespace DurakForm
             flpTrumpCard.Controls.Add(trumpCardBox);
         }
 
+
+
         private void ComputerMove()
         {
 
@@ -122,6 +124,8 @@ namespace DurakForm
             
         }
 
+
+
         private void PlayerClickEvent(object sender, EventArgs e)
         {
             CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
@@ -141,7 +145,6 @@ namespace DurakForm
 
             ComputerMove();
 
-            
             RiverLabel.Text = riverHand.ToString();
             PlayerLabel.Text = player1.ToString();
             ComputerLabel.Text = player2.ToString();

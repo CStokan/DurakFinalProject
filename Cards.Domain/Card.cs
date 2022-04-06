@@ -173,27 +173,7 @@ namespace CardsLibrary
         {
             if (card1.mySuit == card2.mySuit)
             {
-                if (isAceHigh)
-                {
-                    if (card1.myRank == RankEnum.Ace)
-                    {
-                        if (card2.myRank == RankEnum.Ace)
-                            return false;
-                        else
-                            return true;
-                    }
-                    else
-                    {
-                        if (card2.myRank == RankEnum.Ace)
-                            return false;
-                        else
-                            return (card1.myRank > card2?.myRank);
-                    }
-                }
-                else
-                {
-                    return (card1.myRank > card2.myRank);
-                }
+                return (card1.myRank > card2.myRank);
             }
             else
             {
@@ -204,29 +184,12 @@ namespace CardsLibrary
             }
         }
 
+
         public static bool operator >=(Card card1, Card card2)
         {
             if (card1.mySuit == card2.mySuit)
             {
-                if (isAceHigh)
-                {
-                    if (card1.myRank == RankEnum.Ace)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        if (card2.myRank == RankEnum.Ace)
-                            return false;
-                        else
-                            return (card1.myRank >= card2.myRank);
-
-                    }
-                }
-                else
-                {
-                    return (card1.myRank >= card2.myRank);
-                }
+                return (card1.myRank >= card2.myRank);
             }
             else
             {
@@ -238,10 +201,14 @@ namespace CardsLibrary
         }
 
         public static bool operator <=(Card card1, Card card2)
-            => !(card1 > card2);
+        {
+            return !(card1 > card2);
+        }
 
         public static bool operator <(Card card1, Card card2)
-            => !(card1 >= card2);
+        {
+            return !(card1 >= card2);
+        }
 
         public override string ToString()
         {

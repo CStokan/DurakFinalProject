@@ -242,7 +242,7 @@ namespace DurakForm
             // label20
             // 
             this.label20.Image = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.label20.Location = new System.Drawing.Point(155, 212);
+            this.label20.Location = new System.Drawing.Point(145, 193);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(102, 145);
             this.label20.TabIndex = 31;
@@ -270,9 +270,9 @@ namespace DurakForm
             // flowRiverHand
             // 
             this.flowRiverHand.BackgroundImage = global::DurakForm.Properties.Resources.TableWoodTexRiver;
-            this.flowRiverHand.Location = new System.Drawing.Point(316, 248);
+            this.flowRiverHand.Location = new System.Drawing.Point(316, 243);
             this.flowRiverHand.Name = "flowRiverHand";
-            this.flowRiverHand.Size = new System.Drawing.Size(538, 146);
+            this.flowRiverHand.Size = new System.Drawing.Size(538, 151);
             this.flowRiverHand.TabIndex = 35;
             // 
             // flpTrumpCard
