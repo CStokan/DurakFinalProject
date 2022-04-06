@@ -93,22 +93,48 @@ namespace DurakForm
 
         private void ComputerMove()
         {
-
+            RiverLabel.Text = "You made it here 0";
 
             CardBox.CardBox newCardbox1 = new CardBox.CardBox();
+            for (int i = 0; i < player2.Count; i++)
+            {
+                RiverLabel.Text = "You made it here 1";
+                if (riverHand.Count > 0)
 
-            
+                    RiverLabel.Text = "You made it here 1";
+                if (
+                        ((player2[i].Rank == riverHand[riverHand.Count - 1].Rank) ||
+                        ((player2[i].Suit == riverHand[riverHand.Count - 1].Suit) && riverHand[i] > riverHand[riverHand.Count - 1])))
+                    {
+                        newCardbox1.Card = player2.ChooseCardFromHand(i);
+                        flowRiverHand.Controls.Add(newCardbox1);
+
+                        riverHand.AddCardToHand(player2.ChooseCardFromHand(i));
+
+                        flowComputersHand.Controls.RemoveAt(i);
+                        player2.RemoveCardFromHand(player2.GetCard(i));
+
+                        flowComputersHand.Controls.Remove(newCardbox1);
+                        newCardbox1.FaceUp = true;
+                }
+                else
+                {
+                    RiverLabel.Text = "You made it here 3";
+                }
+                
+            }
+
             // Take the card at 0 and remove it from computers hand
-            newCardbox1.Card = player2.ChooseCardFromHand(0);
-            flowRiverHand.Controls.Add(newCardbox1);
-
-            riverHand.AddCardToHand(player2.ChooseCardFromHand(0));
-
-            flowComputersHand.Controls.RemoveAt(0);
-            player2.RemoveCardFromHand(player2.GetCard(0));
-
-            flowComputersHand.Controls.Remove(newCardbox1);
-            newCardbox1.FaceUp = true;
+            //newCardbox1.Card = player2.ChooseCardFromHand(0);
+            //flowRiverHand.Controls.Add(newCardbox1);
+            //
+            //riverHand.AddCardToHand(player2.ChooseCardFromHand(0));
+            //
+            //flowComputersHand.Controls.RemoveAt(0);
+            //player2.RemoveCardFromHand(player2.GetCard(0));
+            //
+            //flowComputersHand.Controls.Remove(newCardbox1);
+            //newCardbox1.FaceUp = true;
 
         }
 
@@ -145,9 +171,9 @@ namespace DurakForm
 
             ComputerMove();
 
-            RiverLabel.Text = riverHand.ToString();
-            PlayerLabel.Text = player1.ToString();
-            ComputerLabel.Text = player2.ToString();
+            //RiverLabel.Text = riverHand.ToString();
+            //PlayerLabel.Text = player1.ToString();
+            //ComputerLabel.Text = player2.ToString();
 
             CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();  
 

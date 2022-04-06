@@ -61,43 +61,7 @@ namespace CardsLibrary
             hand = playerHand;
         }
 
-        public void UpdatePlayableCards(Game game)
-        {
-            playableCards.Clear();
-
-            if (status == Statuses.Attacking && firstTurn)
-            {
-                for (int i = 0; i < Hand.Count; i++)
-                {
-                    playableCards.Add(Hand[i]);
-                }
-            }
-            else if (status == Statuses.Attacking && firstTurn == false)
-            {
-                for (int i = 0; i < Hand.Count; i++)
-                {
-                    if (game.River.Ranks.Contains(Hand[i].Rank))
-                    {
-                        playableCards.Add(Hand[i]);
-                    }
-                }
-            }
-            else if (status == Statuses.Defending)
-            {
-                for (int i = 0; i < Hand.Count; i++)
-                {
-                    if (game.River.Count > 0)
-                    {
-                        if (Hand[i].Suit == game.trumpSuit ||
-                            ((Hand[i].Rank == game.River[game.River.Count - 1].Rank) && firstTurn == true) ||
-                            ((Hand[i].Suit == game.River[game.River.Count - 1].Suit) && Hand[i] > game.River[game.River.Count - 1]))
-                        {
-                            playableCards.Add(Hand[i]);
-                        }
-                    }
-                }
-            }
-        }
+    
 
         /// <summary>
         /// Default Constructor
