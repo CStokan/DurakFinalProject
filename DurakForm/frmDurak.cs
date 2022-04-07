@@ -59,9 +59,10 @@ namespace DurakForm
             flowComputersHand.Controls.Clear();
             flpTrumpCard.Controls.Clear();
 
+            int player1Hand = player1.HandCount();
+            int player2Hand = player2.HandCount();
 
-
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < (6 - player1Hand); i++)
             {
                 // Deal to player
                 CardBox.CardBox newCardbox = new CardBox.CardBox();
@@ -71,15 +72,23 @@ namespace DurakForm
                 newCardbox.FaceUp = true;
                 flowPlayersHand.Controls.Add(newCardbox);
                 newCardbox.Click += PlayerClickEvent;
-
+            }
+            for (int i = 0; i < (6 - player2Hand); i++)
+            {
                 // Deal to computer
                 CardBox.CardBox newCardbox1 = new CardBox.CardBox();
                 player2.AddCardToHand(myDeck.DrawCard());
                 newCardbox1.Card = player2.ChooseCardFromHand(i);
                 newCardbox1.FaceUp = true;
                 flowComputersHand.Controls.Add(newCardbox1);
-
             }
+
+            
+
+        }
+
+        public void GetTrumpCard()
+        {
             // Trump Card
             CardBox.CardBox trumpCardBox = new CardBox.CardBox();
 
@@ -103,17 +112,14 @@ namespace DurakForm
                 int cardCount = 0;
                 if (riverHand.HandCount() > 0)
                 {
-                    if  (player2.GetCard(0).Rank > riverHand.GetCard(0 + cardCount).Rank ||
-                        ((player2.GetCard(i).Suit == riverHand.GetCard(0 + cardCount).Suit) && player2.GetCard(0) > riverHand.GetCard(0 + cardCount)))
+                    if (player2.GetCard(i).Suit == trumpCard.GetCard(0).Suit ||
+                        ((player2.GetCard(i).Suit == riverHand.GetCard(riverHand.HandCount() -1).Suit) && player2.GetCard(i) > riverHand.GetCard(riverHand.HandCount() - 1)))
                     {
                         newCardbox1.Card = player2.ChooseCardFromHand(i);
                         flowRiverHand.Controls.Add(newCardbox1);
-
                         riverHand.AddCardToHand(player2.ChooseCardFromHand(i));
-
                         flowComputersHand.Controls.RemoveAt(i);
                         player2.RemoveCardFromHand(player2.GetCard(i));
-
                         flowComputersHand.Controls.Remove(newCardbox1);
                         newCardbox1.FaceUp = true;
                         cardCount++;
@@ -147,6 +153,7 @@ namespace DurakForm
             player.RemoveCardFromHand(cardToRemove);
             riverHand.AddCardToHand(cardToRemove);
             
+
         }
 
 
@@ -201,9 +208,8 @@ namespace DurakForm
             myDeck = new Deck(36);
             myDeck.Shuffle();
             DealCards(player1, player2);
+            GetTrumpCard();
             flowRiverHand.Controls.Clear();
-
-
 
         }
     }
