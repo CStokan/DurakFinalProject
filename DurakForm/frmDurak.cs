@@ -53,6 +53,23 @@ namespace DurakForm
             
         }
 
+
+        public void SwapTurns()
+        {
+            if (player1.IsAttacking)
+            {
+                player1.IsAttacking = false;
+                player2.IsAttacking = true;
+            }
+            else if (player1.IsAttacking == false)
+            {
+                player1.IsAttacking = true;
+                player2.IsAttacking = false;
+
+              
+            }
+        }
+
         public void DealCards(Player player1, Player player2)
         {
             // Clear controls
@@ -285,6 +302,7 @@ namespace DurakForm
                 flowRiverHand.Controls.Add(riverCardBox);
 
                 ComputerMove();
+
             }
             else if (!player1.IsAttacking)
             {
@@ -353,6 +371,35 @@ namespace DurakForm
         private void label17_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTake_Click(object sender, EventArgs e)
+        {
+           
+            CardBox.CardBox newCardbox1 = new CardBox.CardBox();
+            while (riverHand.HandCount() > 0)
+            {
+                int i = 0;
+                CardBox.CardBox newCardbox2 = new CardBox.CardBox();
+                newCardbox2.Card = riverHand.GetCard(i);
+                flowComputersHand.Controls.Add(newCardbox2);
+                player2.AddCardToHand(riverHand.GetCard(i));
+                flowRiverHand.Controls.RemoveAt(i);
+                riverHand.RemoveCardFromHand(riverHand.GetCard(i));
+                flowRiverHand.Controls.Remove(newCardbox1);
+                newCardbox2.FaceUp = true;
+                i++;
+            }
+            SwapTurns();
+        }
+
+        private void btnOkay_Click(object sender, EventArgs e)
+        {
+            if (player1.IsAttacking)
+            {
+                btnOkay.Enabled = true;
+            }
+            SwapTurns();
         }
     }
 }

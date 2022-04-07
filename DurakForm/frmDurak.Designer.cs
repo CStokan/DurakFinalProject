@@ -57,6 +57,8 @@ namespace DurakForm
             this.RiverLabel = new System.Windows.Forms.Label();
             this.CardsRemainingLabel = new System.Windows.Forms.Label();
             this.testlabel = new System.Windows.Forms.Label();
+            this.btnTake = new System.Windows.Forms.Button();
+            this.btnOkay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -320,6 +322,24 @@ namespace DurakForm
             this.testlabel.TabIndex = 41;
             this.testlabel.Text = "label9";
             // 
+            // btnTake
+            // 
+            this.btnTake.Location = new System.Drawing.Point(890, 476);
+            this.btnTake.Name = "btnTake";
+            this.btnTake.Size = new System.Drawing.Size(75, 23);
+            this.btnTake.TabIndex = 42;
+            this.btnTake.Text = "Take";
+            this.btnTake.UseVisualStyleBackColor = true;
+            // 
+            // btnOkay
+            // 
+            this.btnOkay.Location = new System.Drawing.Point(917, 547);
+            this.btnOkay.Name = "btnOkay";
+            this.btnOkay.Size = new System.Drawing.Size(75, 23);
+            this.btnOkay.TabIndex = 43;
+            this.btnOkay.Text = "Okay";
+            this.btnOkay.UseVisualStyleBackColor = true;
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,6 +347,8 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.btnOkay);
+            this.Controls.Add(this.btnTake);
             this.Controls.Add(this.testlabel);
             this.Controls.Add(this.CardsRemainingLabel);
             this.Controls.Add(this.RiverLabel);
@@ -393,6 +415,8 @@ namespace DurakForm
         private System.Windows.Forms.Label RiverLabel;
         private System.Windows.Forms.Label CardsRemainingLabel;
         private System.Windows.Forms.Label testlabel;
+        private System.Windows.Forms.Button btnTake;
+        private System.Windows.Forms.Button btnOkay;
     }
 }
 
