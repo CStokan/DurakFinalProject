@@ -139,22 +139,20 @@ namespace DurakForm
             {
                 RiverLabel.Text = "Odd";
 
-                for (int i = 0; i < riverHand.HandCount(); i++)
+
+                while (riverHand.HandCount() > 0)
                 {
-                    newCardbox1.Card = riverHand.ChooseCardFromHand(i);
-                    flowComputersHand.Controls.Add(newCardbox1);
-                    player2.AddCardToHand(riverHand.ChooseCardFromHand(i));
+                    int i = 0;
+                    CardBox.CardBox newCardbox2 = new CardBox.CardBox();
+                    newCardbox2.Card = riverHand.GetCard(i);
+                    flowComputersHand.Controls.Add(newCardbox2);
+                    player2.AddCardToHand(riverHand.GetCard(i));
                     flowRiverHand.Controls.RemoveAt(i);
                     riverHand.RemoveCardFromHand(riverHand.GetCard(i));
                     flowRiverHand.Controls.Remove(newCardbox1);
-                    newCardbox1.FaceUp = true;
+                    newCardbox2.FaceUp = true;
+                    i++;
                 }
-
-
-
-
-                
-
             }
 
         }
@@ -171,8 +169,6 @@ namespace DurakForm
             
 
         }
-
-
 
         private void PlayerClickEvent(object sender, EventArgs e)
         {
