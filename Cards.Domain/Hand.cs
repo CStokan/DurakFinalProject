@@ -14,7 +14,7 @@ namespace CardsLibrary
         private Cards cards = new Cards();
         private Card card = new Card();
         private int handsCardsNum = 0;
-
+        private List<RankEnum> ranks = new List<RankEnum>();
 
         public Cards Cards
         {
@@ -25,6 +25,11 @@ namespace CardsLibrary
             }
         }
 
+        public List<RankEnum> Rank
+        {
+            get { return ranks; }
+            set { ranks = value; }
+        }
 
         /// <summary>
         /// Parameterized constructor 

@@ -48,7 +48,6 @@ namespace DurakForm
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.flowPlayersHand = new System.Windows.Forms.FlowLayoutPanel();
             this.flowComputersHand = new System.Windows.Forms.FlowLayoutPanel();
             this.flowRiverHand = new System.Windows.Forms.FlowLayoutPanel();
@@ -231,6 +230,7 @@ namespace DurakForm
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(103, 140);
             this.label17.TabIndex = 28;
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label19
             // 
@@ -239,14 +239,6 @@ namespace DurakForm
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(102, 145);
             this.label19.TabIndex = 30;
-            // 
-            // label20
-            // 
-            this.label20.Image = global::DurakForm.Properties.Resources.PlayingCardBack;
-            this.label20.Location = new System.Drawing.Point(145, 193);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(102, 145);
-            this.label20.TabIndex = 31;
             // 
             // flowPlayersHand
             // 
@@ -344,7 +336,6 @@ namespace DurakForm
             this.Controls.Add(this.flowRiverHand);
             this.Controls.Add(this.flowComputersHand);
             this.Controls.Add(this.flowPlayersHand);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -393,7 +384,6 @@ namespace DurakForm
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.FlowLayoutPanel flowPlayersHand;
         private System.Windows.Forms.FlowLayoutPanel flowComputersHand;
         private System.Windows.Forms.FlowLayoutPanel flowRiverHand;

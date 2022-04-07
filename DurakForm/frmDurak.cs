@@ -100,7 +100,12 @@ namespace DurakForm
         }
 
 
-
+        /// <summary>
+        /// This method is called when the game needs to refresh
+        /// </summary>
+        /// <param name="deck"></param>
+        /// <param name="player1"></param>
+        /// <param name="computerPlayer"></param>
         public void PickUpToSix(Deck deck, Player player1, Player computerPlayer)
         {
             int player1Hand = player1.HandCount();
@@ -135,17 +140,28 @@ namespace DurakForm
         private void ComputerMove()
         {
             RiverLabel.Text = trumpCard.ToString();
-
+            int cardCount = 0;
             CardBox.CardBox newCardbox1 = new CardBox.CardBox();
-            for (int i = 0; i < player2.HandCount(); i++)
+            if (player2.IsAttacking && firstTurn)
             {
-                int cardCount = 0;
-
-                // Defending
-                if (riverHand.HandCount() > 0)
+                for (int i = 0; i < player2.HandCount(); i++)
                 {
-                    if (player2.GetCard(i).Suit == trumpCard.GetCard(0).Suit && player2.GetCard(i).Suit > riverHand.GetCard(riverHand.HandCount() - 1).Suit ||
-                        ((player2.GetCard(i).Suit == riverHand.GetCard(riverHand.HandCount() -1).Suit) && player2.GetCard(i) > riverHand.GetCard(riverHand.HandCount() - 1)))
+                    newCardbox1.Card = player2.ChooseCardFromHand(i);
+                    flowRiverHand.Controls.Add(newCardbox1);
+                    riverHand.AddCardToHand(player2.ChooseCardFromHand(i));
+                    flowComputersHand.Controls.RemoveAt(i);
+                    player2.RemoveCardFromHand(player2.GetCard(i));
+                    flowComputersHand.Controls.Remove(newCardbox1);
+                    newCardbox1.FaceUp = true;
+                    cardCount++;
+                    break;
+                }
+            }
+            else if(player2.IsAttacking && !firstTurn)
+            {
+                for (int i = 0; i < player2.HandCount(); i++)
+                {
+                    if (riverHand.Rank.Contains(riverHand.GetCard(i).Rank))
                     {
                         newCardbox1.Card = player2.ChooseCardFromHand(i);
                         flowRiverHand.Controls.Add(newCardbox1);
@@ -158,9 +174,32 @@ namespace DurakForm
                         break;
                     }
                 }
-                
             }
+            else if (!player2.IsAttacking)
+            {
+                for (int i = 0; i < player2.HandCount(); i++)
+                {
+                    // Defending
+                    if (riverHand.HandCount() > 0)
+                    {
+                        if (player2.GetCard(i).Suit == trumpCard.GetCard(0).Suit && player2.GetCard(i).Suit > riverHand.GetCard(riverHand.HandCount() - 1).Suit ||
+                            ((player2.GetCard(i).Suit == riverHand.GetCard(riverHand.HandCount() - 1).Suit) && player2.GetCard(i) > riverHand.GetCard(riverHand.HandCount() - 1)))
+                        {
+                            newCardbox1.Card = player2.ChooseCardFromHand(i);
+                            flowRiverHand.Controls.Add(newCardbox1);
+                            riverHand.AddCardToHand(player2.ChooseCardFromHand(i));
+                            flowComputersHand.Controls.RemoveAt(i);
+                            player2.RemoveCardFromHand(player2.GetCard(i));
+                            flowComputersHand.Controls.Remove(newCardbox1);
+                            newCardbox1.FaceUp = true;
+                            cardCount++;
+                            break;
+                        }
+                    }
 
+                }
+            }
+                
             // If the player succeeds in an attack
             if (riverHand.HandCount() % 2 == 0)
             {
@@ -168,6 +207,7 @@ namespace DurakForm
             } else
             {
                 RiverLabel.Text = "Odd";
+
 
 
                 while (riverHand.HandCount() > 0)
@@ -202,6 +242,12 @@ namespace DurakForm
 
         }
 
+
+        /// <summary>
+        /// This is invoked when the player clicks a card and determines what to do with the card
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PlayerClickEvent(object sender, EventArgs e)
         {
             CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
@@ -217,6 +263,7 @@ namespace DurakForm
                 // Remove clicked card from player hand
                 // Add card to river hand
                 RemoveFromPlayerAddToRiver(player1, cardClicked);
+
                 // Move it to flowBox
                 flowPlayersHand.Controls.Remove(cardBoxClicked);
                 flowRiverHand.Controls.Add(riverCardBox);
@@ -229,10 +276,10 @@ namespace DurakForm
                 CardBox.CardBox riverCardBox = new CardBox.CardBox();
                 riverCardBox.Card = cardBoxClicked.Card;
                 riverCardBox.FaceUp = true;
-
                 // Remove clicked card from player hand
                 // Add card to river hand
                 RemoveFromPlayerAddToRiver(player1, cardClicked);
+
                 // Move it to flowBox
                 flowPlayersHand.Controls.Remove(cardBoxClicked);
                 flowRiverHand.Controls.Add(riverCardBox);
@@ -257,7 +304,6 @@ namespace DurakForm
                         // Move it to flowBox
                         flowPlayersHand.Controls.Remove(cardBoxClicked);
                         flowRiverHand.Controls.Add(riverCardBox);
-
                         ComputerMove();
                     }
                 }
@@ -267,6 +313,7 @@ namespace DurakForm
             RiverLabel.Text = riverHand.ToString();
             PlayerLabel.Text = player1.ToString();
             ComputerLabel.Text = player2.ToString();
+            CardsRemainingLabel.Text = myDeck.DeckCount().ToString();
 
             CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();  
 
@@ -287,7 +334,7 @@ namespace DurakForm
             player2Hand = new Hand();
             riverHand = new Hand();
             trumpCard = new Hand();
-            bool firstTurn;
+            
 
 
             // Creating new player hands so the cards switch on reset
@@ -300,6 +347,11 @@ namespace DurakForm
             DealCards(player1, player2);
             GetTrumpCard();
             flowRiverHand.Controls.Clear();
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
 
         }
     }
