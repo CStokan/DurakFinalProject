@@ -256,6 +256,7 @@ namespace DurakForm
             // 
             // flowComputersHand
             // 
+            this.flowComputersHand.AutoScroll = true;
             this.flowComputersHand.BackgroundImage = global::DurakForm.Properties.Resources.TableWoodTexRiver;
             this.flowComputersHand.Location = new System.Drawing.Point(316, 49);
             this.flowComputersHand.Name = "flowComputersHand";

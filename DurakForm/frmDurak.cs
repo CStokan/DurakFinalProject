@@ -289,25 +289,28 @@ namespace DurakForm
                 // Move it to flowBox
                 flowPlayersHand.Controls.Remove(cardBoxClicked);
                 flowRiverHand.Controls.Add(riverCardBox);
+                firstTurn = false;
 
                 ComputerMove();
             }
-            else if (player1.IsAttacking && firstTurn == false)
+            else if (player1.IsAttacking && !firstTurn)
             {
-                // This is created to stop the river card from being clickable
-                CardBox.CardBox riverCardBox = new CardBox.CardBox();
-                riverCardBox.Card = cardBoxClicked.Card;
-                riverCardBox.FaceUp = true;
-                // Remove clicked card from player hand
-                // Add card to river hand
-                RemoveFromPlayerAddToRiver(player1, cardClicked);
+                if (riverHand.Rank.Contains(cardClicked.Rank))
+                {
+                    // This is created to stop the river card from being clickable
+                    CardBox.CardBox riverCardBox = new CardBox.CardBox();
+                    riverCardBox.Card = cardBoxClicked.Card;
+                    riverCardBox.FaceUp = true;
+                    // Remove clicked card from player hand
+                    // Add card to river hand
+                    RemoveFromPlayerAddToRiver(player1, cardClicked);
 
-                // Move it to flowBox
-                flowPlayersHand.Controls.Remove(cardBoxClicked);
-                flowRiverHand.Controls.Add(riverCardBox);
+                    // Move it to flowBox
+                    flowPlayersHand.Controls.Remove(cardBoxClicked);
+                    flowRiverHand.Controls.Add(riverCardBox);
 
-                ComputerMove();
-
+                    ComputerMove();
+                }
             }
             else if (!player1.IsAttacking)
             {
@@ -334,7 +337,7 @@ namespace DurakForm
 
             }
 
-            if (!player2.IsAttacking)
+            if (!player1.IsAttacking)
             {
                 // If the player succeeds in an attack
                 if (riverHand.HandCount() % 2 == 0)
@@ -352,8 +355,8 @@ namespace DurakForm
                         int i = 0;
                         CardBox.CardBox newCardbox2 = new CardBox.CardBox();
                         newCardbox2.Card = riverHand.GetCard(i);
-                        flowComputersHand.Controls.Add(newCardbox2);
-                        player2.AddCardToHand(riverHand.GetCard(i));
+                        flowPlayersHand.Controls.Add(newCardbox2);
+                        player1.AddCardToHand(riverHand.GetCard(i));
                         flowRiverHand.Controls.RemoveAt(i);
                         riverHand.RemoveCardFromHand(riverHand.GetCard(i));
                         flowRiverHand.Controls.Remove(cardBoxClicked);
@@ -443,7 +446,7 @@ namespace DurakForm
                 i++;
             }
             
-            SwapTurns();
+            
         }
     }
 }
