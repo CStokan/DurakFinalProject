@@ -112,7 +112,7 @@ namespace DurakForm
                 int cardCount = 0;
                 if (riverHand.HandCount() > 0)
                 {
-                    if (player2.GetCard(i).Suit == trumpCard.GetCard(0).Suit ||
+                    if (player2.GetCard(i).Suit == trumpCard.GetCard(0).Suit && player2.GetCard(i).Suit > riverHand.GetCard(riverHand.HandCount() - 1).Suit ||
                         ((player2.GetCard(i).Suit == riverHand.GetCard(riverHand.HandCount() -1).Suit) && player2.GetCard(i) > riverHand.GetCard(riverHand.HandCount() - 1)))
                     {
                         newCardbox1.Card = player2.ChooseCardFromHand(i);
