@@ -19,12 +19,13 @@ namespace CardsLibrary
         /// <summary>
         /// Trump suit to use if useTrumps is true.
         /// </summary>
-        public static SuitEnum trump = SuitEnum.Clubs;
+        public static SuitEnum trump;
+
         /// <summary>
         /// Flag that determines whether aces are higher than kings or lower
         /// than deuces.
         /// </summary>
-        public static bool isAceHigh = true;
+        public static bool isAceHigh;
 
 
         protected SuitEnum mySuit;

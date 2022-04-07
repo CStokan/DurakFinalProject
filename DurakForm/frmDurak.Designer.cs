@@ -330,10 +330,11 @@ namespace DurakForm
             this.btnTake.TabIndex = 42;
             this.btnTake.Text = "Take";
             this.btnTake.UseVisualStyleBackColor = true;
+            this.btnTake.Click += new System.EventHandler(this.btnTake_Click_1);
             // 
             // btnOkay
             // 
-            this.btnOkay.Location = new System.Drawing.Point(917, 547);
+            this.btnOkay.Location = new System.Drawing.Point(890, 552);
             this.btnOkay.Name = "btnOkay";
             this.btnOkay.Size = new System.Drawing.Size(75, 23);
             this.btnOkay.TabIndex = 43;

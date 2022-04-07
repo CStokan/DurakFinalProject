@@ -65,9 +65,9 @@ namespace DurakForm
             {
                 player1.IsAttacking = true;
                 player2.IsAttacking = false;
-
-              
             }
+
+            PickUpToSix(myDeck, player1, player2);
         }
 
         public void DealCards(Player player1, Player player2)
@@ -216,33 +216,38 @@ namespace DurakForm
 
                 }
             }
-                
-            // If the player succeeds in an attack
-            if (riverHand.HandCount() % 2 == 0)
+
+            if (!player2.IsAttacking)
             {
-                RiverLabel.Text = "Even";
-            } else
-            {
-                RiverLabel.Text = "Odd";
-
-
-
-                while (riverHand.HandCount() > 0)
+                // If the player succeeds in an attack
+                if (riverHand.HandCount() % 2 == 0)
                 {
-                    int i = 0;
-                    CardBox.CardBox newCardbox2 = new CardBox.CardBox();
-                    newCardbox2.Card = riverHand.GetCard(i);
-                    flowComputersHand.Controls.Add(newCardbox2);
-                    player2.AddCardToHand(riverHand.GetCard(i));
-                    flowRiverHand.Controls.RemoveAt(i);
-                    riverHand.RemoveCardFromHand(riverHand.GetCard(i));
-                    flowRiverHand.Controls.Remove(newCardbox1);
-                    newCardbox2.FaceUp = true;
-                    i++;
+                    RiverLabel.Text = "Even";
                 }
+                else
+                {
+                    RiverLabel.Text = "Odd";
 
-                PickUpToSix(myDeck, player1, player2);
+
+
+                    while (riverHand.HandCount() > 0)
+                    {
+                        int i = 0;
+                        CardBox.CardBox newCardbox2 = new CardBox.CardBox();
+                        newCardbox2.Card = riverHand.GetCard(i);
+                        flowComputersHand.Controls.Add(newCardbox2);
+                        player2.AddCardToHand(riverHand.GetCard(i));
+                        flowRiverHand.Controls.RemoveAt(i);
+                        riverHand.RemoveCardFromHand(riverHand.GetCard(i));
+                        flowRiverHand.Controls.Remove(newCardbox1);
+                        newCardbox2.FaceUp = true;
+                        i++;
+                    }
+
+                    PickUpToSix(myDeck, player1, player2);
+                }
             }
+            
 
         }
 
@@ -311,6 +316,7 @@ namespace DurakForm
                     if (cardClicked.Suit == trumpCard.GetCard(0).Suit && cardClicked.Suit > riverHand.GetCard(riverHand.HandCount() - 1).Suit ||
                         ((cardClicked.Suit == riverHand.GetCard(riverHand.HandCount() - 1).Suit) && cardClicked > riverHand.GetCard(riverHand.HandCount() - 1)))
                     {
+                        lblTrumpCard.Text = "YOURE HERE";
                         // This is created to stop the river card from being clickable
                         CardBox.CardBox riverCardBox = new CardBox.CardBox();
                         riverCardBox.Card = cardBoxClicked.Card;
@@ -326,6 +332,37 @@ namespace DurakForm
                     }
                 }
 
+            }
+
+            if (!player2.IsAttacking)
+            {
+                // If the player succeeds in an attack
+                if (riverHand.HandCount() % 2 == 0)
+                {
+                    RiverLabel.Text = "Even";
+                }
+                else
+                {
+                    RiverLabel.Text = "Odd";
+
+
+
+                    while (riverHand.HandCount() > 0)
+                    {
+                        int i = 0;
+                        CardBox.CardBox newCardbox2 = new CardBox.CardBox();
+                        newCardbox2.Card = riverHand.GetCard(i);
+                        flowComputersHand.Controls.Add(newCardbox2);
+                        player2.AddCardToHand(riverHand.GetCard(i));
+                        flowRiverHand.Controls.RemoveAt(i);
+                        riverHand.RemoveCardFromHand(riverHand.GetCard(i));
+                        flowRiverHand.Controls.Remove(cardBoxClicked);
+                        newCardbox2.FaceUp = true;
+                        i++;
+                    }
+
+                    PickUpToSix(myDeck, player1, player2);
+                }
             }
 
             RiverLabel.Text = riverHand.ToString();
@@ -359,12 +396,19 @@ namespace DurakForm
             player1 = new Player(player1Hand, true);
             player2 = new Player(player2Hand, false);
 
+            firstTurn = true;
+
             // Create a new deck
             myDeck = new Deck(36);
             myDeck.Shuffle();
             DealCards(player1, player2);
             GetTrumpCard();
             flowRiverHand.Controls.Clear();
+
+            if (player2.IsAttacking)
+            {
+                ComputerMove();
+            }
 
         }
 
@@ -373,32 +417,32 @@ namespace DurakForm
 
         }
 
-        private void btnTake_Click(object sender, EventArgs e)
-        {
-           
-            CardBox.CardBox newCardbox1 = new CardBox.CardBox();
-            while (riverHand.HandCount() > 0)
-            {
-                int i = 0;
-                CardBox.CardBox newCardbox2 = new CardBox.CardBox();
-                newCardbox2.Card = riverHand.GetCard(i);
-                flowComputersHand.Controls.Add(newCardbox2);
-                player2.AddCardToHand(riverHand.GetCard(i));
-                flowRiverHand.Controls.RemoveAt(i);
-                riverHand.RemoveCardFromHand(riverHand.GetCard(i));
-                flowRiverHand.Controls.Remove(newCardbox1);
-                newCardbox2.FaceUp = true;
-                i++;
-            }
-            SwapTurns();
-        }
-
         private void btnOkay_Click(object sender, EventArgs e)
         {
             if (player1.IsAttacking)
             {
                 btnOkay.Enabled = true;
             }
+            SwapTurns();
+        }
+
+        private void btnTake_Click_1(object sender, EventArgs e)
+        {
+            CardBox.CardBox newCardbox1 = new CardBox.CardBox();
+            while (riverHand.HandCount() > 0)
+            {
+                int i = 0;
+                CardBox.CardBox newCardbox2 = new CardBox.CardBox();
+                newCardbox2.Card = riverHand.GetCard(i);
+                flowPlayersHand.Controls.Add(newCardbox2);
+                player1.AddCardToHand(riverHand.GetCard(i));
+                flowRiverHand.Controls.RemoveAt(i);
+                riverHand.RemoveCardFromHand(riverHand.GetCard(i));
+                flowRiverHand.Controls.Remove(newCardbox1);
+                newCardbox2.FaceUp = true;
+                i++;
+            }
+            
             SwapTurns();
         }
     }
