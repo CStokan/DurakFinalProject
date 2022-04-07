@@ -129,17 +129,13 @@ namespace DurakForm
                 
             }
 
-            // Take the card at 0 and remove it from computers hand
-            //newCardbox1.Card = player2.ChooseCardFromHand(0);
-            //flowRiverHand.Controls.Add(newCardbox1);
-            //
-            //riverHand.AddCardToHand(player2.ChooseCardFromHand(0));
-            //
-            //flowComputersHand.Controls.RemoveAt(0);
-            //player2.RemoveCardFromHand(player2.GetCard(0));
-            //
-            //flowComputersHand.Controls.Remove(newCardbox1);
-            //newCardbox1.FaceUp = true;
+            if (riverHand.HandCount() % 2 == 0)
+            {
+                RiverLabel.Text = "Even";
+            }else
+            {
+                RiverLabel.Text = "Odd";
+            }
 
         }
 
@@ -177,7 +173,7 @@ namespace DurakForm
 
             ComputerMove();
 
-            RiverLabel.Text = riverHand.ToString();
+            //RiverLabel.Text = riverHand.ToString();
             PlayerLabel.Text = player1.ToString();
             ComputerLabel.Text = player2.ToString();
 
