@@ -20,6 +20,7 @@ namespace DurakForm
         static Hand player2Hand = new Hand();
         public Hand riverHand = new Hand();
         public Hand trumpCard = new Hand();
+        bool firstTurn;
 
         Player player1 = new Player(player1Hand);
         Player player2 = new Player(player2Hand);
@@ -99,6 +100,35 @@ namespace DurakForm
         }
 
 
+
+        public void PickUpToSix(Deck deck, Player player1, Player computerPlayer)
+        {
+            int player1Hand = player1.HandCount();
+            int player2Hand = computerPlayer.HandCount();
+
+            for (int i = 0; i < (6 - player1Hand); i++)
+            {
+                // Deal to player
+                CardBox.CardBox newCardbox = new CardBox.CardBox();
+                player1.AddCardToHand(myDeck.DrawCard());
+                newCardbox.Card = player1.ChooseCardFromHand(i);
+                newCardbox.FaceUp = true;
+                flowPlayersHand.Controls.Add(newCardbox);
+                newCardbox.Click += PlayerClickEvent;
+            }
+            for (int i = 0; i < (6 - player2Hand); i++)
+            {
+                // Deal to computer
+                CardBox.CardBox newCardbox1 = new CardBox.CardBox();
+                
+                computerPlayer.AddCardToHand(myDeck.DrawCard());
+                newCardbox1.Card = computerPlayer.ChooseCardFromHand(i);
+                newCardbox1.FaceUp = true;
+                flowComputersHand.Controls.Add(newCardbox1);
+            }
+        }
+
+
         /// <summary>
         /// This is how the computer determines what card to play
         /// </summary>
@@ -153,6 +183,8 @@ namespace DurakForm
                     newCardbox2.FaceUp = true;
                     i++;
                 }
+
+                PickUpToSix(myDeck, player1, player2);
             }
 
         }
@@ -175,19 +207,62 @@ namespace DurakForm
             CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
             Card cardClicked = cardBoxClicked.Card;
 
-            // This is created to stop the river card from being clickable
-            CardBox.CardBox riverCardBox = new CardBox.CardBox();
-            riverCardBox.Card = cardBoxClicked.Card;
-            riverCardBox.FaceUp = true;
+            if (player1.IsAttacking && firstTurn)
+            {
+                // This is created to stop the river card from being clickable
+                CardBox.CardBox riverCardBox = new CardBox.CardBox();
+                riverCardBox.Card = cardBoxClicked.Card;
+                riverCardBox.FaceUp = true;
 
-            // Remove clicked card from player hand
-            // Add card to river hand
-            RemoveFromPlayerAddToRiver(player1, cardClicked);
-            // Move it to flowBox
-            flowPlayersHand.Controls.Remove(cardBoxClicked);
-            flowRiverHand.Controls.Add(riverCardBox);
+                // Remove clicked card from player hand
+                // Add card to river hand
+                RemoveFromPlayerAddToRiver(player1, cardClicked);
+                // Move it to flowBox
+                flowPlayersHand.Controls.Remove(cardBoxClicked);
+                flowRiverHand.Controls.Add(riverCardBox);
 
-            ComputerMove();
+                ComputerMove();
+            }
+            else if (player1.IsAttacking && firstTurn == false)
+            {
+                // This is created to stop the river card from being clickable
+                CardBox.CardBox riverCardBox = new CardBox.CardBox();
+                riverCardBox.Card = cardBoxClicked.Card;
+                riverCardBox.FaceUp = true;
+
+                // Remove clicked card from player hand
+                // Add card to river hand
+                RemoveFromPlayerAddToRiver(player1, cardClicked);
+                // Move it to flowBox
+                flowPlayersHand.Controls.Remove(cardBoxClicked);
+                flowRiverHand.Controls.Add(riverCardBox);
+
+                ComputerMove();
+            }
+            else if (!player1.IsAttacking)
+            {
+                if (riverHand.HandCount() > 0)
+                {
+                    if (cardClicked.Suit == trumpCard.GetCard(0).Suit && cardClicked.Suit > riverHand.GetCard(riverHand.HandCount() - 1).Suit ||
+                        ((cardClicked.Suit == riverHand.GetCard(riverHand.HandCount() - 1).Suit) && cardClicked > riverHand.GetCard(riverHand.HandCount() - 1)))
+                    {
+                        // This is created to stop the river card from being clickable
+                        CardBox.CardBox riverCardBox = new CardBox.CardBox();
+                        riverCardBox.Card = cardBoxClicked.Card;
+                        riverCardBox.FaceUp = true;
+
+                        // Remove clicked card from player hand
+                        // Add card to river hand
+                        RemoveFromPlayerAddToRiver(player1, cardClicked);
+                        // Move it to flowBox
+                        flowPlayersHand.Controls.Remove(cardBoxClicked);
+                        flowRiverHand.Controls.Add(riverCardBox);
+
+                        ComputerMove();
+                    }
+                }
+
+            }
 
             RiverLabel.Text = riverHand.ToString();
             PlayerLabel.Text = player1.ToString();
@@ -212,10 +287,12 @@ namespace DurakForm
             player2Hand = new Hand();
             riverHand = new Hand();
             trumpCard = new Hand();
+            bool firstTurn;
+
 
             // Creating new player hands so the cards switch on reset
-            player1 = new Player(player1Hand);
-            player2 = new Player(player2Hand);
+            player1 = new Player(player1Hand, true);
+            player2 = new Player(player2Hand, false);
 
             // Create a new deck
             myDeck = new Deck(36);

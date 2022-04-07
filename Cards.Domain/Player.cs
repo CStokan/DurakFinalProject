@@ -61,14 +61,7 @@ namespace CardsLibrary
             hand = playerHand;
         }
 
-        public void DrawCard(Deck deck)
-        {
-            if (deck.Cards.Count > 0)
-            {
-                deck.Cards[0].FaceUp = true;
-                this.Add(deck.GetCard(0));
-            }
-        }
+        
 
 
 
