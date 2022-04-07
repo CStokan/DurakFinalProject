@@ -24,20 +24,20 @@ namespace DurakForm
 
         Player player1 = new Player(player1Hand);
         Player player2 = new Player(player2Hand);
-        
-       
+
+
 
 
         public frmDurakGame()
         {
             InitializeComponent();
-            
-            
+
+
         }
 
         private void frmDurakGame_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void playerClickCard(object sender, EventArgs e)
@@ -45,23 +45,22 @@ namespace DurakForm
             CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
             Card cardClicked = cardBoxClicked.Card;
 
-            
+
         }
 
         public void DisplayCards()
         {
-            
+
         }
 
 
         public void SwapTurns()
         {
-            PickUpToSix(myDeck, player1, player2);
-
             if (player1.IsAttacking)
             {
                 player1.IsAttacking = false;
                 player2.IsAttacking = true;
+                firstTurn = true;
 
                 ComputerMove();
             }
@@ -69,7 +68,10 @@ namespace DurakForm
             {
                 player1.IsAttacking = true;
                 player2.IsAttacking = false;
-            } 
+                firstTurn = true;
+            }
+
+            PickUpToSix(myDeck, player1, player2);
         }
 
         public void DealCards(Player player1, Player player2)
@@ -86,7 +88,7 @@ namespace DurakForm
             {
                 // Deal to player
                 CardBox.CardBox newCardbox = new CardBox.CardBox();
-                
+
                 player1.AddCardToHand(myDeck.DrawCard());
                 newCardbox.Card = player1.ChooseCardFromHand(i);
                 newCardbox.FaceUp = true;
@@ -103,7 +105,7 @@ namespace DurakForm
                 flowComputersHand.Controls.Add(newCardbox1);
             }
 
-            
+
 
         }
 
@@ -144,7 +146,7 @@ namespace DurakForm
             {
                 // Deal to computer
                 CardBox.CardBox newCardbox1 = new CardBox.CardBox();
-                
+
                 computerPlayer.AddCardToHand(myDeck.DrawCard());
                 newCardbox1.Card = computerPlayer.ChooseCardFromHand(i);
                 newCardbox1.FaceUp = true;
@@ -176,7 +178,7 @@ namespace DurakForm
                     break;
                 }
             }
-            else if(player2.IsAttacking && !firstTurn)
+            else if (player2.IsAttacking && !firstTurn)
             {
                 for (int i = 0; i < player2.HandCount(); i++)
                 {
@@ -217,6 +219,7 @@ namespace DurakForm
                     }
 
                 }
+                firstTurn = true;
             }
 
             if (!player2.IsAttacking)
@@ -249,7 +252,7 @@ namespace DurakForm
                     PickUpToSix(myDeck, player1, player2);
                 }
             }
-            
+
 
         }
 
@@ -262,7 +265,7 @@ namespace DurakForm
         {
             player.RemoveCardFromHand(cardToRemove);
             riverHand.AddCardToHand(cardToRemove);
-            
+
 
         }
 
@@ -295,7 +298,7 @@ namespace DurakForm
 
                 ComputerMove();
             }
-            else if (player1.IsAttacking && !firstTurn)
+            else if (player1.IsAttacking)
             {
                 if (riverHand.Rank.Contains(cardClicked.Rank))
                 {
@@ -375,7 +378,7 @@ namespace DurakForm
             ComputerLabel.Text = player2.ToString();
             CardsRemainingLabel.Text = myDeck.DeckCount().ToString();
 
-            CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();  
+            CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();
 
 
         }
@@ -394,7 +397,7 @@ namespace DurakForm
             player2Hand = new Hand();
             riverHand = new Hand();
             trumpCard = new Hand();
-            
+
 
 
             // Creating new player hands so the cards switch on reset
@@ -410,6 +413,8 @@ namespace DurakForm
             GetTrumpCard();
             flowRiverHand.Controls.Clear();
 
+
+
             if (player2.IsAttacking)
             {
                 ComputerMove();
@@ -422,11 +427,10 @@ namespace DurakForm
 
         }
 
+
+
         private void btnTake_Click_1(object sender, EventArgs e)
         {
-            player1.IsAttacking = true;
-            player2.IsAttacking = false;
-
             CardBox.CardBox newCardbox1 = new CardBox.CardBox();
             while (riverHand.HandCount() > 0)
             {
@@ -438,18 +442,28 @@ namespace DurakForm
                 flowRiverHand.Controls.RemoveAt(i);
                 riverHand.RemoveCardFromHand(riverHand.GetCard(i));
                 flowRiverHand.Controls.Remove(newCardbox1);
+                flowPlayersHand.Controls.Add(newCardbox2);
+                newCardbox2.Click += PlayerClickEvent;
                 newCardbox2.FaceUp = true;
                 i++;
             }
             firstTurn = true;
+
+
         }
 
         private void btnOkay_Click_1(object sender, EventArgs e)
         {
+
+            flowRiverHand.Controls.Clear();
+
+            riverHand.Clear();
+
             if (player1.IsAttacking)
             {
                 btnOkay.Enabled = true;
             }
+
             SwapTurns();
         }
     }
