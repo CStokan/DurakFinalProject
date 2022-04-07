@@ -341,6 +341,7 @@ namespace DurakForm
             this.btnOkay.TabIndex = 43;
             this.btnOkay.Text = "Okay";
             this.btnOkay.UseVisualStyleBackColor = true;
+            this.btnOkay.Click += new System.EventHandler(this.btnOkay_Click_1);
             // 
             // frmDurakGame
             // 

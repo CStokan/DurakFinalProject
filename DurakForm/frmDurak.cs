@@ -56,18 +56,20 @@ namespace DurakForm
 
         public void SwapTurns()
         {
+            PickUpToSix(myDeck, player1, player2);
+
             if (player1.IsAttacking)
             {
                 player1.IsAttacking = false;
                 player2.IsAttacking = true;
+
+                ComputerMove();
             }
             else if (player1.IsAttacking == false)
             {
                 player1.IsAttacking = true;
                 player2.IsAttacking = false;
-            }
-
-            PickUpToSix(myDeck, player1, player2);
+            } 
         }
 
         public void DealCards(Player player1, Player player2)
@@ -420,17 +422,11 @@ namespace DurakForm
 
         }
 
-        private void btnOkay_Click(object sender, EventArgs e)
-        {
-            if (player1.IsAttacking)
-            {
-                btnOkay.Enabled = true;
-            }
-            SwapTurns();
-        }
-
         private void btnTake_Click_1(object sender, EventArgs e)
         {
+            player1.IsAttacking = true;
+            player2.IsAttacking = false;
+
             CardBox.CardBox newCardbox1 = new CardBox.CardBox();
             while (riverHand.HandCount() > 0)
             {
@@ -445,8 +441,16 @@ namespace DurakForm
                 newCardbox2.FaceUp = true;
                 i++;
             }
-            
-            
+            firstTurn = true;
+        }
+
+        private void btnOkay_Click_1(object sender, EventArgs e)
+        {
+            if (player1.IsAttacking)
+            {
+                btnOkay.Enabled = true;
+            }
+            SwapTurns();
         }
     }
 }
