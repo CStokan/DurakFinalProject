@@ -110,6 +110,8 @@ namespace DurakForm
             for (int i = 0; i < player2.HandCount(); i++)
             {
                 int cardCount = 0;
+
+                // Defending
                 if (riverHand.HandCount() > 0)
                 {
                     if (player2.GetCard(i).Suit == trumpCard.GetCard(0).Suit && player2.GetCard(i).Suit > riverHand.GetCard(riverHand.HandCount() - 1).Suit ||
@@ -129,12 +131,30 @@ namespace DurakForm
                 
             }
 
+            // If the player succeeds in an attack
             if (riverHand.HandCount() % 2 == 0)
             {
                 RiverLabel.Text = "Even";
-            }else
+            } else
             {
                 RiverLabel.Text = "Odd";
+
+                for (int i = 0; i < riverHand.HandCount(); i++)
+                {
+                    newCardbox1.Card = riverHand.ChooseCardFromHand(i);
+                    flowComputersHand.Controls.Add(newCardbox1);
+                    player2.AddCardToHand(riverHand.ChooseCardFromHand(i));
+                    flowRiverHand.Controls.RemoveAt(i);
+                    riverHand.RemoveCardFromHand(riverHand.GetCard(i));
+                    flowRiverHand.Controls.Remove(newCardbox1);
+                    newCardbox1.FaceUp = true;
+                }
+
+
+
+
+                
+
             }
 
         }
@@ -173,7 +193,7 @@ namespace DurakForm
 
             ComputerMove();
 
-            //RiverLabel.Text = riverHand.ToString();
+            RiverLabel.Text = riverHand.ToString();
             PlayerLabel.Text = player1.ToString();
             ComputerLabel.Text = player2.ToString();
 
@@ -181,6 +201,7 @@ namespace DurakForm
 
 
         }
+
 
         private void btnStart_Click(object sender, EventArgs e)
         {
