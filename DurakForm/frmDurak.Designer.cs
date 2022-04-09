@@ -59,6 +59,7 @@ namespace DurakForm
             this.flpDiscarded = new System.Windows.Forms.FlowLayoutPanel();
             this.flpDeck = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTrump = new System.Windows.Forms.Label();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -344,6 +345,17 @@ namespace DurakForm
             this.lblTrump.TabIndex = 44;
             this.lblTrump.Text = "label1";
             // 
+            // btnHelp
+            // 
+            this.btnHelp.BackColor = System.Drawing.Color.Transparent;
+            this.btnHelp.Image = global::DurakForm.Properties.Resources.HelpButtonSmall;
+            this.btnHelp.Location = new System.Drawing.Point(1009, 274);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(191, 37);
+            this.btnHelp.TabIndex = 45;
+            this.btnHelp.UseVisualStyleBackColor = false;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,6 +363,7 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblTrump);
             this.Controls.Add(this.flpDeck);
             this.Controls.Add(this.flpDiscarded);
@@ -421,6 +434,7 @@ namespace DurakForm
         private System.Windows.Forms.FlowLayoutPanel flpDiscarded;
         private System.Windows.Forms.FlowLayoutPanel flpDeck;
         private System.Windows.Forms.Label lblTrump;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
 

@@ -117,6 +117,7 @@
     <Content Include="Resources\h7.png" />
     <Content Include="Resources\h8.png" />
     <Content Include="Resources\h9.png" />
+    <None Include="Resources\HelpButtonSmall.png" />
     <Content Include="Resources\hj.png" />
     <Content Include="Resources\hk.png" />
     <Content Include="Resources\hq.png" />

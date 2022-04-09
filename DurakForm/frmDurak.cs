@@ -536,5 +536,10 @@ namespace DurakForm
         {
 
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("chrome.exe", "https://cardgameinfo.com/how-to-play-durak/%22");
+        }
     }
 }
