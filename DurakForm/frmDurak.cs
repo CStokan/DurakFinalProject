@@ -53,6 +53,23 @@ namespace DurakForm
 
         }
 
+        public void TurnChoice()
+        {
+            Random rnd = new Random();
+            int TurnChoice = rnd.Next(0, 2);
+
+            if (TurnChoice == 0)
+            {
+                player1.IsAttacking = true;
+                player2.IsAttacking = false;
+            }
+            else if (TurnChoice == 1)
+            {
+                player2.IsAttacking = true;
+                player1.IsAttacking = false;
+            }
+        }
+
 
         public void SwapTurns()
         {
@@ -62,6 +79,9 @@ namespace DurakForm
                 player2.IsAttacking = true;
                 firstTurn = true;
 
+                lblAttack.Visible = false;
+                lblDefend.Visible = true;
+
                 ComputerMove();
             }
             else if (player1.IsAttacking == false)
@@ -69,6 +89,9 @@ namespace DurakForm
                 player1.IsAttacking = true;
                 player2.IsAttacking = false;
                 firstTurn = true;
+
+                lblAttack.Visible = true;
+                lblDefend.Visible = false;
             }
 
             PickUpToSix(myDeck, player1, player2);
@@ -117,7 +140,9 @@ namespace DurakForm
             trumpCard.AddCardToHand(myDeck.DrawCard());
             trumpCardBox.Card = trumpCard.ChooseCardFromHand(0);
             trumpCardBox.FaceUp = true;
+            trumpCardBox.Size = new Size(75, 107);
             flpTrumpCard.Controls.Add(trumpCardBox);
+            
         }
 
 
@@ -137,7 +162,7 @@ namespace DurakForm
                 // Deal to player
                 CardBox.CardBox newCardbox = new CardBox.CardBox();
                 player1.AddCardToHand(myDeck.DrawCard());
-                newCardbox.Card = player1.ChooseCardFromHand(i);
+                newCardbox.Card = player1.ChooseCardFromHand(player1.HandCount() - 1);
                 newCardbox.FaceUp = true;
                 flowPlayersHand.Controls.Add(newCardbox);
                 newCardbox.Click += PlayerClickEvent;
@@ -148,7 +173,7 @@ namespace DurakForm
                 CardBox.CardBox newCardbox1 = new CardBox.CardBox();
 
                 computerPlayer.AddCardToHand(myDeck.DrawCard());
-                newCardbox1.Card = computerPlayer.ChooseCardFromHand(i);
+                newCardbox1.Card = computerPlayer.ChooseCardFromHand(computerPlayer.HandCount() - 1);
                 newCardbox1.FaceUp = true;
                 flowComputersHand.Controls.Add(newCardbox1);
             }
@@ -160,7 +185,7 @@ namespace DurakForm
         /// </summary>
         private void ComputerMove()
         {
-            RiverLabel.Text = trumpCard.ToString();
+            RiverLabel.Text = riverHand.ToString();
             int cardCount = 0;
             CardBox.CardBox newCardbox1 = new CardBox.CardBox();
             if (player2.IsAttacking && firstTurn)
@@ -175,6 +200,7 @@ namespace DurakForm
                     flowComputersHand.Controls.Remove(newCardbox1);
                     newCardbox1.FaceUp = true;
                     cardCount++;
+                    firstTurn = false;
                     break;
                 }
             }
@@ -324,6 +350,7 @@ namespace DurakForm
                     if (cardClicked.Suit == trumpCard.GetCard(0).Suit && cardClicked.Suit > riverHand.GetCard(riverHand.HandCount() - 1).Suit ||
                         ((cardClicked.Suit == riverHand.GetCard(riverHand.HandCount() - 1).Suit) && cardClicked > riverHand.GetCard(riverHand.HandCount() - 1)))
                     {
+                        
                         lblTrumpCard.Text = "YOURE HERE";
                         // This is created to stop the river card from being clickable
                         CardBox.CardBox riverCardBox = new CardBox.CardBox();
@@ -339,38 +366,28 @@ namespace DurakForm
                         ComputerMove();
                     }
                 }
+                lblTrump.Text = trumpCard.ToString();
 
             }
-
-            if (!player1.IsAttacking)
+            else if (riverHand.HandCount() % 2 == 0 && !player1.IsAttacking)
             {
                 // If the player succeeds in an attack
-                if (riverHand.HandCount() % 2 == 0)
+                while (riverHand.HandCount() > 0)
                 {
-                    RiverLabel.Text = "Even";
+                    int i = 0;
+                    CardBox.CardBox newCardbox2 = new CardBox.CardBox();
+                    newCardbox2.Card = riverHand.GetCard(i);
+                    flowPlayersHand.Controls.Add(newCardbox2);
+                    player1.AddCardToHand(riverHand.GetCard(i));
+                    flowRiverHand.Controls.RemoveAt(i + 1);
+                    riverHand.RemoveCardFromHand(riverHand.GetCard(i));
+                    flowRiverHand.Controls.Remove(cardBoxClicked);
+                    newCardbox2.FaceUp = true;
+                    i++;
                 }
-                else
-                {
-                    RiverLabel.Text = "Odd";
 
-
-
-                    while (riverHand.HandCount() > 0)
-                    {
-                        int i = 0;
-                        CardBox.CardBox newCardbox2 = new CardBox.CardBox();
-                        newCardbox2.Card = riverHand.GetCard(i);
-                        flowPlayersHand.Controls.Add(newCardbox2);
-                        player1.AddCardToHand(riverHand.GetCard(i));
-                        flowRiverHand.Controls.RemoveAt(i);
-                        riverHand.RemoveCardFromHand(riverHand.GetCard(i));
-                        flowRiverHand.Controls.Remove(cardBoxClicked);
-                        newCardbox2.FaceUp = true;
-                        i++;
-                    }
-
-                    PickUpToSix(myDeck, player1, player2);
-                }
+                //PickUpToSix(myDeck, player1, player2);
+                SwapTurns();
             }
 
             RiverLabel.Text = riverHand.ToString();
@@ -386,6 +403,7 @@ namespace DurakForm
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+
             // Emptying labels so there is no stacking on reset
             RiverLabel.Text = String.Empty;
             PlayerLabel.Text = String.Empty;
@@ -411,13 +429,29 @@ namespace DurakForm
             myDeck.Shuffle();
             DealCards(player1, player2);
             GetTrumpCard();
+            lblTrump.Text = trumpCard.ToString();
             flowRiverHand.Controls.Clear();
 
+            // Visually showing the deck after start
+            CardBox.CardBox DeckBack = new CardBox.CardBox();
 
+            DeckBack.Card = myDeck.GetCard(0);
+            DeckBack.FaceUp = false;
+            DeckBack.Size = new Size(75, 107);
+            flpDeck.Controls.Add(DeckBack);
+
+            TurnChoice();
 
             if (player2.IsAttacking)
             {
+                lblAttack.Visible = false;
+                lblDefend.Visible = true;
                 ComputerMove();
+            }
+            else
+            {
+                lblAttack.Visible = true;
+                lblDefend.Visible = false;
             }
 
         }
@@ -447,17 +481,42 @@ namespace DurakForm
                 newCardbox2.FaceUp = true;
                 i++;
             }
-            firstTurn = true;
 
+            firstTurn = true;
+            
+            ComputerMove();
+            PickUpToSix(myDeck, player1, player2);
+
+            RiverLabel.Text = riverHand.ToString();
+            PlayerLabel.Text = player1.ToString();
+            ComputerLabel.Text = player2.ToString();
+
+            CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();
 
         }
 
         private void btnOkay_Click_1(object sender, EventArgs e)
         {
 
+            // Clear controls (Visual Cards) from river
             flowRiverHand.Controls.Clear();
 
-            riverHand.Clear();
+            // Remove cards from river logically & add last card removed as the top of discarded pile
+            while (riverHand.HandCount() > 0)
+            {
+                riverHand.RemoveCardFromHand(riverHand.GetCard(0));
+
+                if (riverHand.HandCount() == 1)
+                {
+                    // Putting Last card removed to display in the discard pile
+                    CardBox.CardBox discardbox = new CardBox.CardBox();
+
+                    discardbox.Card = riverHand.ChooseCardFromHand(0);
+                    discardbox.FaceUp = true;
+                    discardbox.Size = new Size(75, 107);
+                    flpDiscarded.Controls.Add(discardbox);
+                }
+            }
 
             if (player1.IsAttacking)
             {
@@ -465,6 +524,17 @@ namespace DurakForm
             }
 
             SwapTurns();
+
+            RiverLabel.Text = riverHand.ToString();
+            PlayerLabel.Text = player1.ToString();
+            ComputerLabel.Text = player2.ToString();
+
+            CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();
+        }
+
+        private void RiverLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
