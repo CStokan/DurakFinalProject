@@ -52,13 +52,13 @@ namespace DurakForm
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Onur\Desktop\Durak\DurakForm\Database.mdf;Integrated Security=True");
+            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\FinalDurakProject\DurakForm\Database.mdf;Integrated Security=True");
             cn.Open();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             frmRegistration registration = new frmRegistration();
             registration.ShowDialog();
         }

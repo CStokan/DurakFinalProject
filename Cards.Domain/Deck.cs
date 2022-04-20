@@ -137,7 +137,8 @@ namespace CardsLibrary
             {
                 for (int suitVal = 0; suitVal < 4; suitVal++)
                 {
-                    for (int rankVal = 1; rankVal < 14; rankVal++)
+                    cards.Add(new Card((SuitEnum)suitVal, (RankEnum.Ace)));
+                    for (int rankVal = 2; rankVal < 14; rankVal++)
                     {
                         cards.Add(new Card((SuitEnum)suitVal, (RankEnum)rankVal));
                     }
@@ -150,6 +151,18 @@ namespace CardsLibrary
                 {
                     cards.Add(new Card((SuitEnum)suitVal, (RankEnum.Ace)));
                     for (int rankVal = 6; rankVal < 14; rankVal++)
+                    {
+                        cards.Add(new Card((SuitEnum)suitVal, (RankEnum)rankVal));
+                    }
+                }
+            }
+            else if (startDeckAt == 20)
+            {
+
+                for (int suitVal = 0; suitVal < 4; suitVal++)
+                {
+                    cards.Add(new Card((SuitEnum)suitVal, (RankEnum.Ace)));
+                    for (int rankVal = 10; rankVal < 14; rankVal++)
                     {
                         cards.Add(new Card((SuitEnum)suitVal, (RankEnum)rankVal));
                     }

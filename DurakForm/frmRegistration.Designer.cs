@@ -76,6 +76,7 @@ namespace DurakForm
             // 
             this.txtPassword.Location = new System.Drawing.Point(114, 197);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 4;
             // 
@@ -83,6 +84,7 @@ namespace DurakForm
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(114, 251);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(100, 20);
             this.txtConfirmPassword.TabIndex = 5;
             // 

@@ -20,6 +20,7 @@ namespace DurakForm
         static Hand player2Hand = new Hand();
         public Hand riverHand = new Hand();
         public Hand trumpCard = new Hand();
+        public int deckSize;
         bool firstTurn;
 
         Player player1 = new Player(player1Hand);
@@ -409,6 +410,7 @@ namespace DurakForm
             PlayerLabel.Text = String.Empty;
             ComputerLabel.Text = String.Empty;
             testlabel.Text = String.Empty;
+            
 
             // Creating new player hands and trump on reset
             player1Hand = new Hand();
@@ -424,8 +426,22 @@ namespace DurakForm
 
             firstTurn = true;
 
+            if (rdo20Deck.Checked)
+            {
+                deckSize = 20;
+            }
+            else if(rdo36Deck.Checked)
+            {
+                deckSize = 36;
+            }
+            else if(rdo52Deck.Checked)
+            {
+                deckSize = 52;
+            }
+
             // Create a new deck
-            myDeck = new Deck(36);
+            myDeck = new Deck(deckSize);
+
             myDeck.Shuffle();
             DealCards(player1, player2);
             GetTrumpCard();
@@ -461,6 +477,8 @@ namespace DurakForm
 
         }
 
+
+        
 
 
         private void btnTake_Click_1(object sender, EventArgs e)

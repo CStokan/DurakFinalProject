@@ -60,6 +60,9 @@ namespace DurakForm
             this.flpDeck = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTrump = new System.Windows.Forms.Label();
             this.btnHelp = new System.Windows.Forms.Button();
+            this.rdo52Deck = new System.Windows.Forms.RadioButton();
+            this.rdo36Deck = new System.Windows.Forms.RadioButton();
+            this.rdo20Deck = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -356,6 +359,38 @@ namespace DurakForm
             this.btnHelp.UseVisualStyleBackColor = false;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
+            // rdo52Deck
+            // 
+            this.rdo52Deck.AutoSize = true;
+            this.rdo52Deck.Location = new System.Drawing.Point(1058, 329);
+            this.rdo52Deck.Name = "rdo52Deck";
+            this.rdo52Deck.Size = new System.Drawing.Size(37, 17);
+            this.rdo52Deck.TabIndex = 46;
+            this.rdo52Deck.Text = "52";
+            this.rdo52Deck.UseVisualStyleBackColor = true;
+            // 
+            // rdo36Deck
+            // 
+            this.rdo36Deck.AutoSize = true;
+            this.rdo36Deck.Checked = true;
+            this.rdo36Deck.Location = new System.Drawing.Point(1101, 329);
+            this.rdo36Deck.Name = "rdo36Deck";
+            this.rdo36Deck.Size = new System.Drawing.Size(37, 17);
+            this.rdo36Deck.TabIndex = 47;
+            this.rdo36Deck.TabStop = true;
+            this.rdo36Deck.Text = "36";
+            this.rdo36Deck.UseVisualStyleBackColor = true;
+            // 
+            // rdo20Deck
+            // 
+            this.rdo20Deck.AutoSize = true;
+            this.rdo20Deck.Location = new System.Drawing.Point(1148, 329);
+            this.rdo20Deck.Name = "rdo20Deck";
+            this.rdo20Deck.Size = new System.Drawing.Size(37, 17);
+            this.rdo20Deck.TabIndex = 48;
+            this.rdo20Deck.Text = "20";
+            this.rdo20Deck.UseVisualStyleBackColor = true;
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,6 +398,9 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.rdo20Deck);
+            this.Controls.Add(this.rdo36Deck);
+            this.Controls.Add(this.rdo52Deck);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.lblTrump);
             this.Controls.Add(this.flpDeck);
@@ -435,6 +473,9 @@ namespace DurakForm
         private System.Windows.Forms.FlowLayoutPanel flpDeck;
         private System.Windows.Forms.Label lblTrump;
         private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.RadioButton rdo52Deck;
+        private System.Windows.Forms.RadioButton rdo36Deck;
+        private System.Windows.Forms.RadioButton rdo20Deck;
     }
 }
 

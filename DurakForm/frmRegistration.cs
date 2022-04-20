@@ -25,7 +25,7 @@ namespace DurakForm
 
         private void frmRegistration_Load(object sender, EventArgs e)
         {
-            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Onur\Desktop\Durak\DurakForm\Database.mdf;Integrated Security=True");
+            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\FinalDurakProject\DurakForm\Database.mdf;Integrated Security=True");
             cn.Open();
         }
 
@@ -61,7 +61,7 @@ namespace DurakForm
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Your Account is created . Please login now.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        this.Hide();
+                        this.Close();
                         frmLogin login = new frmLogin();
                         login.ShowDialog();
                     }
