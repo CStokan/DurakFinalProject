@@ -25,7 +25,7 @@ namespace CardsLibrary
             }
         }
 
-        public List<RankEnum> Rank
+        public List<RankEnum> Ranks
         {
             get { return ranks; }
             set { ranks = value; }
@@ -45,6 +45,7 @@ namespace CardsLibrary
         /// </summary>
         public Hand()
         {
+            Cards = new Cards();
         }
 
         public int HandCount()

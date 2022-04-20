@@ -71,7 +71,7 @@ namespace CardsLibrary
         /// </summary>
         public Player()
         {
-
+            
         }
 
     }

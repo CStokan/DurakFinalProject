@@ -209,7 +209,7 @@ namespace DurakForm
             {
                 for (int i = 0; i < player2.HandCount(); i++)
                 {
-                    if (riverHand.Rank.Contains(riverHand.GetCard(i).Rank))
+                    if (riverHand.Ranks.Contains(player2.ChooseCardFromHand(i).Rank))
                     {
                         newCardbox1.Card = player2.ChooseCardFromHand(i);
                         flowRiverHand.Controls.Add(newCardbox1);
@@ -220,6 +220,34 @@ namespace DurakForm
                         newCardbox1.FaceUp = true;
                         cardCount++;
                         break;
+                    }
+                    else
+                    {
+                        CardBox.CardBox newCardbox3 = new CardBox.CardBox();
+                        while (riverHand.HandCount() > 0)
+                        {
+                            int l = 0;
+                            CardBox.CardBox newCardbox2 = new CardBox.CardBox();
+                            newCardbox2.Card = riverHand.GetCard(i);
+                            flowComputersHand.Controls.Add(newCardbox2);
+                            player2.AddCardToHand(riverHand.GetCard(i));
+                            flowRiverHand.Controls.RemoveAt(i);
+                            riverHand.RemoveCardFromHand(riverHand.GetCard(i));
+                            flowRiverHand.Controls.Remove(newCardbox3);
+                            flowComputersHand.Controls.Add(newCardbox2);
+                            newCardbox2.Click += PlayerClickEvent;
+                            newCardbox2.FaceUp = true;
+                            l++;
+                        }
+                        if (player1.IsAttacking == false)
+                        {
+                            player1.IsAttacking = true;
+                            player2.IsAttacking = false;
+                            firstTurn = true;
+
+                            lblAttack.Visible = true;
+                            lblDefend.Visible = false;
+                        }
                     }
                 }
             }
@@ -327,7 +355,7 @@ namespace DurakForm
             }
             else if (player1.IsAttacking)
             {
-                if (riverHand.Rank.Contains(cardClicked.Rank))
+                if (riverHand.Ranks.Contains(cardClicked.Rank))
                 {
                     // This is created to stop the river card from being clickable
                     CardBox.CardBox riverCardBox = new CardBox.CardBox();
@@ -348,7 +376,7 @@ namespace DurakForm
             {
                 if (riverHand.HandCount() > 0)
                 {
-                    if (cardClicked.Suit == trumpCard.GetCard(0).Suit && cardClicked.Suit > riverHand.GetCard(riverHand.HandCount() - 1).Suit ||
+                    if (cardClicked.Suit == trumpCard.GetCard(0).Suit && cardClicked > riverHand.GetCard(riverHand.HandCount() - 1) ||
                         ((cardClicked.Suit == riverHand.GetCard(riverHand.HandCount() - 1).Suit) && cardClicked > riverHand.GetCard(riverHand.HandCount() - 1)))
                     {
                         
@@ -364,6 +392,7 @@ namespace DurakForm
                         // Move it to flowBox
                         flowPlayersHand.Controls.Remove(cardBoxClicked);
                         flowRiverHand.Controls.Add(riverCardBox);
+
                         ComputerMove();
                     }
                 }

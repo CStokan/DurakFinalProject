@@ -21,7 +21,6 @@ namespace CardsLibrary
             foreach (Card sourceCard in this)
             {
                 newCards.Add((Card)sourceCard.Clone());
-
             }
             return newCards;
         }
