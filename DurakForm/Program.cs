@@ -19,7 +19,7 @@ namespace DurakForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDurakGame());
+            Application.Run(new frmLogin());
 
 
 
