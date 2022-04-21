@@ -24,7 +24,7 @@ namespace DurakForm
         public Hand trumpCard = new Hand();
         public int deckSize;
         bool firstTurn;
-        StreamWriter file;
+   
         public string userID;
 
         
@@ -335,6 +335,29 @@ namespace DurakForm
 
         }
 
+        private void WriteToTheLog()
+        {
+
+
+            using (FileStream stream = new FileStream("C:\\Users\\Onur\\Desktop\\Durak\\DurakForm\\bin\\Debug\\"+ userID+".txt", FileMode.Append, FileAccess.Write))
+            {
+                using (StreamWriter file = new StreamWriter(stream))
+                {
+                    file.Write("\nCurrent Cards at the River Area " + riverHand.ToString() + "at " + today
+                    + "\nCurrent Cards at the Player Hand " + player1.ToString() + "at " + today +
+                    "\nCurrent Cards at the Computer Hand " + player2.ToString() + "at " + today +
+                    "\nCards Remaining " + myDeck.DeckCount() + " at " + today);
+                    file.Close();
+
+                }
+            }
+        
+
+            
+            
+          
+
+        }
 
         /// <summary>
         /// This is invoked when the player clicks a card and determines what to do with the card
@@ -431,16 +454,22 @@ namespace DurakForm
                 SwapTurns();
             }
 
+
+            
+
             RiverLabel.Text = riverHand.ToString();
-            file.Write("\nCurrent Cards at the River Area " + riverHand.ToString() + "at " + today);
+            
             PlayerLabel.Text = player1.ToString();
-            file.Write("\nCurrent Cards at the Player Hand " + player1.ToString() + "at " + today);
+            
             ComputerLabel.Text = player2.ToString();
-            file.Write("\nCurrent Cards at the Computer Hand " + player2.ToString() + "at " + today);
+            
             CardsRemainingLabel.Text = myDeck.DeckCount().ToString();
 
             CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();
-            file.Write("\nCards Remaining " + myDeck.DeckCount() + " at " + today);
+
+            WriteToTheLog();
+
+
 
 
         }
@@ -448,12 +477,7 @@ namespace DurakForm
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (file == null)
-            {
-                file = new StreamWriter(userID + ".txt");
-               
-            }
-            file.Write("Game started by " + userID + "at " + today);
+
 
             // Emptying labels so there is no stacking on reset
             RiverLabel.Text = String.Empty;
