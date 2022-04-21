@@ -63,6 +63,7 @@ namespace DurakForm
             this.rdo52Deck = new System.Windows.Forms.RadioButton();
             this.rdo36Deck = new System.Windows.Forms.RadioButton();
             this.rdo20Deck = new System.Windows.Forms.RadioButton();
+            this.btnLogs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTrumpCard
@@ -391,6 +392,16 @@ namespace DurakForm
             this.rdo20Deck.Text = "20";
             this.rdo20Deck.UseVisualStyleBackColor = true;
             // 
+            // btnLogs
+            // 
+            this.btnLogs.Location = new System.Drawing.Point(209, 274);
+            this.btnLogs.Name = "btnLogs";
+            this.btnLogs.Size = new System.Drawing.Size(75, 23);
+            this.btnLogs.TabIndex = 50;
+            this.btnLogs.Text = "Logs";
+            this.btnLogs.UseVisualStyleBackColor = true;
+            this.btnLogs.Click += new System.EventHandler(this.btnLogs_Click);
+            // 
             // frmDurakGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,6 +409,7 @@ namespace DurakForm
             this.BackgroundImage = global::DurakForm.Properties.Resources.AoKbB6q1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1218, 639);
+            this.Controls.Add(this.btnLogs);
             this.Controls.Add(this.rdo20Deck);
             this.Controls.Add(this.rdo36Deck);
             this.Controls.Add(this.rdo52Deck);
@@ -476,6 +488,7 @@ namespace DurakForm
         private System.Windows.Forms.RadioButton rdo52Deck;
         private System.Windows.Forms.RadioButton rdo36Deck;
         private System.Windows.Forms.RadioButton rdo20Deck;
+        private System.Windows.Forms.Button btnLogs;
     }
 }
 

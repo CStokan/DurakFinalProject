@@ -15,7 +15,7 @@ namespace DurakForm
 {
     public partial class frmDurakGame : Form
     {
-
+       
         Deck myDeck = new Deck(36);
         DateTime today = DateTime.Now;
         static Hand player1Hand = new Hand();
@@ -608,6 +608,12 @@ namespace DurakForm
         private void btnHelp_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("chrome.exe", "https://cardgameinfo.com/how-to-play-durak/%22");
+        }
+
+        private void btnLogs_Click(object sender, EventArgs e)
+        {
+            
+            System.Diagnostics.Process.Start("C:\\Users\\Onur\\Desktop\\Durak\\DurakForm\\bin\\Debug");
         }
     }
 }
