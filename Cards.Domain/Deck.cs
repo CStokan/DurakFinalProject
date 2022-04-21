@@ -194,11 +194,12 @@ namespace CardsLibrary
         public Card DrawCard()
         {
 
-            Card card;
-            // Draw first card then remove it
-            card = cards.First();
-            cards.RemoveAt(0);
-            return card;
+                Card card;
+                // Draw first card then remove it
+                card = cards.First();
+                cards.RemoveAt(0);
+                return card;
+           
         }
 
 

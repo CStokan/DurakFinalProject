@@ -25,7 +25,7 @@ namespace DurakForm
 
         private void frmRegistration_Load(object sender, EventArgs e)
         {
-            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\FinalDurakProject\DurakForm\Database.mdf;Integrated Security=True");
+            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Onur\Desktop\Durak\DurakForm\Database.mdf;Integrated Security=True");
             cn.Open();
         }
 

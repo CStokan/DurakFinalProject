@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CardsLibrary;
+
 
 namespace DurakForm
 {
@@ -15,13 +17,18 @@ namespace DurakForm
     {
 
         Deck myDeck = new Deck(36);
-
+        DateTime today = DateTime.Now;
         static Hand player1Hand = new Hand();
         static Hand player2Hand = new Hand();
         public Hand riverHand = new Hand();
         public Hand trumpCard = new Hand();
         public int deckSize;
         bool firstTurn;
+        StreamWriter file;
+        public string userID;
+
+        
+
 
         Player player1 = new Player(player1Hand);
         Player player2 = new Player(player2Hand);
@@ -29,10 +36,11 @@ namespace DurakForm
 
 
 
-        public frmDurakGame()
+        public frmDurakGame(string user)
         {
             InitializeComponent();
-
+            userID = user;
+            
 
         }
 
@@ -46,12 +54,12 @@ namespace DurakForm
             CardBox.CardBox cardBoxClicked = (CardBox.CardBox)sender;
             Card cardClicked = cardBoxClicked.Card;
 
-
+            
         }
 
         public void DisplayCards()
         {
-
+            
         }
 
         public void TurnChoice()
@@ -186,6 +194,7 @@ namespace DurakForm
         /// </summary>
         private void ComputerMove()
         {
+            
             RiverLabel.Text = riverHand.ToString();
             int cardCount = 0;
             CardBox.CardBox newCardbox1 = new CardBox.CardBox();
@@ -421,11 +430,15 @@ namespace DurakForm
             }
 
             RiverLabel.Text = riverHand.ToString();
+            file.Write("\nCurrent Cards at the River Area " + riverHand.ToString() + "at " + today);
             PlayerLabel.Text = player1.ToString();
+            file.Write("\nCurrent Cards at the Player Hand " + player1.ToString() + "at " + today);
             ComputerLabel.Text = player2.ToString();
+            file.Write("\nCurrent Cards at the Computer Hand " + player2.ToString() + "at " + today);
             CardsRemainingLabel.Text = myDeck.DeckCount().ToString();
 
             CardsRemainingLabel.Text = "Cards Remaining: " + myDeck.DeckCount();
+            file.Write("\nCards Remaining " + myDeck.DeckCount() + " at " + today);
 
 
         }
@@ -433,6 +446,12 @@ namespace DurakForm
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (file == null)
+            {
+                file = new StreamWriter(userID + ".txt");
+               
+            }
+            file.Write("Game started by " + userID + "at " + today);
 
             // Emptying labels so there is no stacking on reset
             RiverLabel.Text = String.Empty;

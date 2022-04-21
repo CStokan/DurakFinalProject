@@ -16,6 +16,9 @@ namespace DurakForm
         private SqlConnection cn;
         private SqlCommand cmd;
         private SqlDataReader dr;
+        private string userID;
+
+         
 
         public frmLogin()
         {
@@ -34,7 +37,8 @@ namespace DurakForm
             
                     dr.Close();
                     this.Hide();
-                    frmDurakGame home = new frmDurakGame();
+                    userID = txtEmail.Text;
+                    frmDurakGame home = new frmDurakGame(userID);
                     home.ShowDialog();
                 }
                 else
@@ -52,7 +56,7 @@ namespace DurakForm
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\FinalDurakProject\DurakForm\Database.mdf;Integrated Security=True");
+            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Onur\Desktop\Durak\DurakForm\Database.mdf;Integrated Security=True");
             cn.Open();
         }
 
